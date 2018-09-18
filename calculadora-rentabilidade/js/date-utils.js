@@ -16,3 +16,21 @@ function formatDate(date) {
 
    return day + "/" + month + "/" + year;
 }
+
+function specificDayBetween(dataInicial, dataFinal, dia, inclusivo) {
+	var iDiaSemanaDataIni = dataInicial.getDay();
+	var iDiff = daysBetween(dataInicial, dataFinal);
+
+	var res = iDiff + (6 - dia) + iDiaSemanaDataIni;
+	if (inclusivo) res++;
+	res /= 7;
+
+	var res = Math.trunc(res);
+	return res;
+}
+
+function weekendDaysBetween(dataInicial, dataFinal, inclusivo) {
+	return specificDayBetween(dataInicial, dataFinal, 0, inclusivo)
+		+ specificDayBetween(dataInicial, dataFinal, 6, inclusivo);
+}
+

@@ -17,6 +17,12 @@ function testaDiasEntre(dataInicial, dataFinal) {
       + daysBetween(dataInicial,dataFinal));
 }
 
+function testaSpecificDayBetween(dataInicial, dataFinal, dia, inclusivo) {
+   console.log("Dia "+dia+" entre: " + formatDate(dataInicial)
+      + " e " + formatDate(dataFinal) + ": "
+      + specificDayBetween(dataInicial,dataFinal,dia,inclusivo));
+}
+
 
 testaJurosCompostos(200, 0.6, 12);
 testaJurosCompostos(5000, 1, 18);
@@ -27,3 +33,11 @@ testaDiasEntre(new Date(2018, 0, 1), new Date(2019, 0, 1));
 testaDiasEntre(new Date(2018, 0, 1), new Date(2018, 0, 8));
 testaDiasEntre(new Date(2018, 4, 1), new Date(2018, 5, 1));
 testaDiasEntre(new Date(2018, 7, 15), new Date(2018, 5, 1));
+
+
+testaSpecificDayBetween(new Date(2018, 0, 1), new Date(2019, 0, 1), 0, true);
+testaSpecificDayBetween(new Date(2018, 0, 1), new Date(2018, 0, 8), 2, true);
+testaSpecificDayBetween(new Date(2018, 4, 1), new Date(2018, 5, 1), 1, true);
+testaSpecificDayBetween(new Date(2018, 7, 15), new Date(2018, 5, 1), 4, true);
+
+
