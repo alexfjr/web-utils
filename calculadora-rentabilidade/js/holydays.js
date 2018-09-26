@@ -935,3 +935,27 @@ new Date(2078,10,2), //quarta-feira Finados
 new Date(2078,10,15), //terça-feira Proclamação da República
 new Date(2078,11,25)]; //quarta-feira Natal
 
+
+
+function holydaysBetween(fromDate, toDate, withSaturday = false, withSunday = false) {
+   var count = 0;
+   var date1;
+   
+   if (fromDate > toDate) {
+      date1 = toDate;
+      toDate = fromDate;
+      fromDate = date1;
+   }
+   
+   holydays.forEach(function (date) {
+      if (fromDate <= date && toDate >= date) {
+         if ((withSaturday || date.getDay() != 6) &&
+               (withSunday || date.getDay() != 0)) {
+            count++;
+         }
+      }
+   });
+   return count;
+}
+
+
