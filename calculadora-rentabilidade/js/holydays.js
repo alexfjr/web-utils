@@ -1,936 +1,937 @@
-var holydays = [new Date(2001,1,1), //segunda-feira Confraternização Universal
-new Date(2001,2,26), //segunda-feira Carnaval
-new Date(2001,2,27), //terça-feira Carnaval
-new Date(2001,4,13), //sexta-feira Paixão de Cristo
-new Date(2001,4,21), //sábado Tiradentes
-new Date(2001,5,1), //terça-feira Dia do Trabalho
-new Date(2001,6,14), //quinta-feira Corpus Christi
-new Date(2001,9,7), //sexta-feira Independência do Brasil
-new Date(2001,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2001,11,2), //sexta-feira Finados
-new Date(2001,11,15), //quinta-feira Proclamação da República
-new Date(2001,12,25), //terça-feira Natal
-new Date(2002,1,1), //terça-feira Confraternização Universal
-new Date(2002,2,11), //segunda-feira Carnaval
-new Date(2002,2,12), //terça-feira Carnaval
-new Date(2002,3,29), //sexta-feira Paixão de Cristo
-new Date(2002,4,21), //domingo Tiradentes
-new Date(2002,5,1), //quarta-feira Dia do Trabalho
-new Date(2002,5,30), //quinta-feira Corpus Christi
-new Date(2002,9,7), //sábado Independência do Brasil
-new Date(2002,10,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2002,11,2), //sábado Finados
-new Date(2002,11,15), //sexta-feira Proclamação da República
-new Date(2002,12,25), //quarta-feira Natal
-new Date(2003,1,1), //quarta-feira Confraternização Universal
-new Date(2003,3,3), //segunda-feira Carnaval
-new Date(2003,3,4), //terça-feira Carnaval
-new Date(2003,4,18), //sexta-feira Paixão de Cristo
-new Date(2003,4,21), //segunda-feira Tiradentes
-new Date(2003,5,1), //quinta-feira Dia do Trabalho
-new Date(2003,6,19), //quinta-feira Corpus Christi
-new Date(2003,9,7), //domingo Independência do Brasil
-new Date(2003,10,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2003,11,2), //domingo Finados
-new Date(2003,11,15), //sábado Proclamação da República
-new Date(2003,12,25), //quinta-feira Natal
-new Date(2004,1,1), //quinta-feira Confraternização Universal
-new Date(2004,2,23), //segunda-feira Carnaval
-new Date(2004,2,24), //terça-feira Carnaval
-new Date(2004,4,9), //sexta-feira Paixão de Cristo
-new Date(2004,4,21), //quarta-feira Tiradentes
-new Date(2004,5,1), //sábado Dia do Trabalho
-new Date(2004,6,10), //quinta-feira Corpus Christi
-new Date(2004,9,7), //terça-feira Independência do Brasil
-new Date(2004,10,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2004,11,2), //terça-feira Finados
-new Date(2004,11,15), //segunda-feira Proclamação da República
-new Date(2004,12,25), //sábado Natal
-new Date(2005,1,1), //sábado Confraternização Universal
-new Date(2005,2,7), //segunda-feira Carnaval
-new Date(2005,2,8), //terça-feira Carnaval
-new Date(2005,3,25), //sexta-feira Paixão de Cristo
-new Date(2005,4,21), //quinta-feira Tiradentes
-new Date(2005,5,1), //domingo Dia do Trabalho
-new Date(2005,5,26), //quinta-feira Corpus Christi
-new Date(2005,9,7), //quarta-feira Independência do Brasil
-new Date(2005,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2005,11,2), //quarta-feira Finados
-new Date(2005,11,15), //terça-feira Proclamação da República
-new Date(2005,12,25), //domingo Natal
-new Date(2006,1,1), //domingo Confraternização Universal
-new Date(2006,2,27), //segunda-feira Carnaval
-new Date(2006,2,28), //terça-feira Carnaval
-new Date(2006,4,14), //sexta-feira Paixão de Cristo
-new Date(2006,4,21), //sexta-feira Tiradentes
-new Date(2006,5,1), //segunda-feira Dia do Trabalho
-new Date(2006,6,15), //quinta-feira Corpus Christi
-new Date(2006,9,7), //quinta-feira Independência do Brasil
-new Date(2006,10,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2006,11,2), //quinta-feira Finados
-new Date(2006,11,15), //quarta-feira Proclamação da República
-new Date(2006,12,25), //segunda-feira Natal
-new Date(2007,1,1), //segunda-feira Confraternização Universal
-new Date(2007,2,19), //segunda-feira Carnaval
-new Date(2007,2,20), //terça-feira Carnaval
-new Date(2007,4,6), //sexta-feira Paixão de Cristo
-new Date(2007,4,21), //sábado Tiradentes
-new Date(2007,5,1), //terça-feira Dia do Trabalho
-new Date(2007,6,7), //quinta-feira Corpus Christi
-new Date(2007,9,7), //sexta-feira Independência do Brasil
-new Date(2007,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2007,11,2), //sexta-feira Finados
-new Date(2007,11,15), //quinta-feira Proclamação da República
-new Date(2007,12,25), //terça-feira Natal
-new Date(2008,1,1), //terça-feira Confraternização Universal
-new Date(2008,2,4), //segunda-feira Carnaval
-new Date(2008,2,5), //terça-feira Carnaval
-new Date(2008,3,21), //sexta-feira Paixão de Cristo
-new Date(2008,4,21), //segunda-feira Tiradentes
-new Date(2008,5,1), //quinta-feira Dia do Trabalho
-new Date(2008,5,22), //quinta-feira Corpus Christi
-new Date(2008,9,7), //domingo Independência do Brasil
-new Date(2008,10,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2008,11,2), //domingo Finados
-new Date(2008,11,15), //sábado Proclamação da República
-new Date(2008,12,25), //quinta-feira Natal
-new Date(2009,1,1), //quinta-feira Confraternização Universal
-new Date(2009,2,23), //segunda-feira Carnaval
-new Date(2009,2,24), //terça-feira Carnaval
-new Date(2009,4,10), //sexta-feira Paixão de Cristo
-new Date(2009,4,21), //terça-feira Tiradentes
-new Date(2009,5,1), //sexta-feira Dia do Trabalho
-new Date(2009,6,11), //quinta-feira Corpus Christi
-new Date(2009,9,7), //segunda-feira Independência do Brasil
-new Date(2009,10,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2009,11,2), //segunda-feira Finados
-new Date(2009,11,15), //domingo Proclamação da República
-new Date(2009,12,25), //sexta-feira Natal
-new Date(2010,1,1), //sexta-feira Confraternização Universal
-new Date(2010,2,15), //segunda-feira Carnaval
-new Date(2010,2,16), //terça-feira Carnaval
-new Date(2010,4,2), //sexta-feira Paixão de Cristo
-new Date(2010,4,21), //quarta-feira Tiradentes
-new Date(2010,5,1), //sábado Dia do Trabalho
-new Date(2010,6,3), //quinta-feira Corpus Christi
-new Date(2010,9,7), //terça-feira Independência do Brasil
-new Date(2010,10,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2010,11,2), //terça-feira Finados
-new Date(2010,11,15), //segunda-feira Proclamação da República
-new Date(2010,12,25), //sábado Natal
-new Date(2011,1,1), //sábado Confraternização Universal
-new Date(2011,3,7), //segunda-feira Carnaval
-new Date(2011,3,8), //terça-feira Carnaval
-new Date(2011,4,21), //quinta-feira Paixão de Cristo
-new Date(2011,4,22), //sexta-feira Tiradentes
-new Date(2011,5,1), //domingo Dia do Trabalho
-new Date(2011,6,23), //quinta-feira Corpus Christi
-new Date(2011,9,7), //quarta-feira Independência do Brasil
-new Date(2011,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2011,11,2), //quarta-feira Finados
-new Date(2011,11,15), //terça-feira Proclamação da República
-new Date(2011,12,25), //domingo Natal
-new Date(2012,1,1), //domingo Confraternização Universal
-new Date(2012,2,20), //segunda-feira Carnaval
-new Date(2012,2,21), //terça-feira Carnaval
-new Date(2012,4,6), //sexta-feira Paixão de Cristo
-new Date(2012,4,21), //sábado Tiradentes
-new Date(2012,5,1), //terça-feira Dia do Trabalho
-new Date(2012,6,7), //quinta-feira Corpus Christi
-new Date(2012,9,7), //sexta-feira Independência do Brasil
-new Date(2012,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2012,11,2), //sexta-feira Finados
-new Date(2012,11,15), //quinta-feira Proclamação da República
-new Date(2012,12,25), //terça-feira Natal
-new Date(2013,1,1), //terça-feira Confraternização Universal
-new Date(2013,2,11), //segunda-feira Carnaval
-new Date(2013,2,12), //terça-feira Carnaval
-new Date(2013,3,29), //sexta-feira Paixão de Cristo
-new Date(2013,4,21), //domingo Tiradentes
-new Date(2013,5,1), //quarta-feira Dia do Trabalho
-new Date(2013,5,30), //quinta-feira Corpus Christi
-new Date(2013,9,7), //sábado Independência do Brasil
-new Date(2013,10,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2013,11,2), //sábado Finados
-new Date(2013,11,15), //sexta-feira Proclamação da República
-new Date(2013,12,25), //quarta-feira Natal
-new Date(2014,1,1), //quarta-feira Confraternização Universal
-new Date(2014,3,3), //segunda-feira Carnaval
-new Date(2014,3,4), //terça-feira Carnaval
-new Date(2014,4,18), //sexta-feira Paixão de Cristo
-new Date(2014,4,21), //segunda-feira Tiradentes
-new Date(2014,5,1), //quinta-feira Dia do Trabalho
-new Date(2014,6,19), //quinta-feira Corpus Christi
-new Date(2014,9,7), //domingo Independência do Brasil
-new Date(2014,10,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2014,11,2), //domingo Finados
-new Date(2014,11,15), //sábado Proclamação da República
-new Date(2014,12,25), //quinta-feira Natal
-new Date(2015,1,1), //quinta-feira Confraternização Universal
-new Date(2015,2,16), //segunda-feira Carnaval
-new Date(2015,2,17), //terça-feira Carnaval
-new Date(2015,4,3), //sexta-feira Paixão de Cristo
-new Date(2015,4,21), //terça-feira Tiradentes
-new Date(2015,5,1), //sexta-feira Dia do Trabalho
-new Date(2015,6,4), //quinta-feira Corpus Christi
-new Date(2015,9,7), //segunda-feira Independência do Brasil
-new Date(2015,10,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2015,11,2), //segunda-feira Finados
-new Date(2015,11,15), //domingo Proclamação da República
-new Date(2015,12,25), //sexta-feira Natal
-new Date(2016,1,1), //sexta-feira Confraternização Universal
-new Date(2016,2,8), //segunda-feira Carnaval
-new Date(2016,2,9), //terça-feira Carnaval
-new Date(2016,3,25), //sexta-feira Paixão de Cristo
-new Date(2016,4,21), //quinta-feira Tiradentes
-new Date(2016,5,1), //domingo Dia do Trabalho
-new Date(2016,5,26), //quinta-feira Corpus Christi
-new Date(2016,9,7), //quarta-feira Independência do Brasil
-new Date(2016,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2016,11,2), //quarta-feira Finados
-new Date(2016,11,15), //terça-feira Proclamação da República
-new Date(2016,12,25), //domingo Natal
-new Date(2017,1,1), //domingo Confraternização Universal
-new Date(2017,2,27), //segunda-feira Carnaval
-new Date(2017,2,28), //terça-feira Carnaval
-new Date(2017,4,14), //sexta-feira Paixão de Cristo
-new Date(2017,4,21), //sexta-feira Tiradentes
-new Date(2017,5,1), //segunda-feira Dia do Trabalho
-new Date(2017,6,15), //quinta-feira Corpus Christi
-new Date(2017,9,7), //quinta-feira Independência do Brasil
-new Date(2017,10,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2017,11,2), //quinta-feira Finados
-new Date(2017,11,15), //quarta-feira Proclamação da República
-new Date(2017,12,25), //segunda-feira Natal
-new Date(2018,1,1), //segunda-feira Confraternização Universal
-new Date(2018,2,12), //segunda-feira Carnaval
-new Date(2018,2,13), //terça-feira Carnaval
-new Date(2018,3,30), //sexta-feira Paixão de Cristo
-new Date(2018,4,21), //sábado Tiradentes
-new Date(2018,5,1), //terça-feira Dia do Trabalho
-new Date(2018,5,31), //quinta-feira Corpus Christi
-new Date(2018,9,7), //sexta-feira Independência do Brasil
-new Date(2018,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2018,11,2), //sexta-feira Finados
-new Date(2018,11,15), //quinta-feira Proclamação da República
-new Date(2018,12,25), //terça-feira Natal
-new Date(2019,1,1), //terça-feira Confraternização Universal
-new Date(2019,3,4), //segunda-feira Carnaval
-new Date(2019,3,5), //terça-feira Carnaval
-new Date(2019,4,19), //sexta-feira Paixão de Cristo
-new Date(2019,4,21), //domingo Tiradentes
-new Date(2019,5,1), //quarta-feira Dia do Trabalho
-new Date(2019,6,20), //quinta-feira Corpus Christi
-new Date(2019,9,7), //sábado Independência do Brasil
-new Date(2019,10,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2019,11,2), //sábado Finados
-new Date(2019,11,15), //sexta-feira Proclamação da República
-new Date(2019,12,25), //quarta-feira Natal
-new Date(2020,1,1), //quarta-feira Confraternização Universal
-new Date(2020,2,24), //segunda-feira Carnaval
-new Date(2020,2,25), //terça-feira Carnaval
-new Date(2020,4,10), //sexta-feira Paixão de Cristo
-new Date(2020,4,21), //terça-feira Tiradentes
-new Date(2020,5,1), //sexta-feira Dia do Trabalho
-new Date(2020,6,11), //quinta-feira Corpus Christi
-new Date(2020,9,7), //segunda-feira Independência do Brasil
-new Date(2020,10,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2020,11,2), //segunda-feira Finados
-new Date(2020,11,15), //domingo Proclamação da República
-new Date(2020,12,25), //sexta-feira Natal
-new Date(2021,1,1), //sexta-feira Confraternização Universal
-new Date(2021,2,15), //segunda-feira Carnaval
-new Date(2021,2,16), //terça-feira Carnaval
-new Date(2021,4,2), //sexta-feira Paixão de Cristo
-new Date(2021,4,21), //quarta-feira Tiradentes
-new Date(2021,5,1), //sábado Dia do Trabalho
-new Date(2021,6,3), //quinta-feira Corpus Christi
-new Date(2021,9,7), //terça-feira Independência do Brasil
-new Date(2021,10,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2021,11,2), //terça-feira Finados
-new Date(2021,11,15), //segunda-feira Proclamação da República
-new Date(2021,12,25), //sábado Natal
-new Date(2022,1,1), //sábado Confraternização Universal
-new Date(2022,2,28), //segunda-feira Carnaval
-new Date(2022,3,1), //terça-feira Carnaval
-new Date(2022,4,15), //sexta-feira Paixão de Cristo
-new Date(2022,4,21), //quinta-feira Tiradentes
-new Date(2022,5,1), //domingo Dia do Trabalho
-new Date(2022,6,16), //quinta-feira Corpus Christi
-new Date(2022,9,7), //quarta-feira Independência do Brasil
-new Date(2022,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2022,11,2), //quarta-feira Finados
-new Date(2022,11,15), //terça-feira Proclamação da República
-new Date(2022,12,25), //domingo Natal
-new Date(2023,1,1), //domingo Confraternização Universal
-new Date(2023,2,20), //segunda-feira Carnaval
-new Date(2023,2,21), //terça-feira Carnaval
-new Date(2023,4,7), //sexta-feira Paixão de Cristo
-new Date(2023,4,21), //sexta-feira Tiradentes
-new Date(2023,5,1), //segunda-feira Dia do Trabalho
-new Date(2023,6,8), //quinta-feira Corpus Christi
-new Date(2023,9,7), //quinta-feira Independência do Brasil
-new Date(2023,10,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2023,11,2), //quinta-feira Finados
-new Date(2023,11,15), //quarta-feira Proclamação da República
-new Date(2023,12,25), //segunda-feira Natal
-new Date(2024,1,1), //segunda-feira Confraternização Universal
-new Date(2024,2,12), //segunda-feira Carnaval
-new Date(2024,2,13), //terça-feira Carnaval
-new Date(2024,3,29), //sexta-feira Paixão de Cristo
-new Date(2024,4,21), //domingo Tiradentes
-new Date(2024,5,1), //quarta-feira Dia do Trabalho
-new Date(2024,5,30), //quinta-feira Corpus Christi
-new Date(2024,9,7), //sábado Independência do Brasil
-new Date(2024,10,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2024,11,2), //sábado Finados
-new Date(2024,11,15), //sexta-feira Proclamação da República
-new Date(2024,12,25), //quarta-feira Natal
-new Date(2025,1,1), //quarta-feira Confraternização Universal
-new Date(2025,3,3), //segunda-feira Carnaval
-new Date(2025,3,4), //terça-feira Carnaval
-new Date(2025,4,18), //sexta-feira Paixão de Cristo
-new Date(2025,4,21), //segunda-feira Tiradentes
-new Date(2025,5,1), //quinta-feira Dia do Trabalho
-new Date(2025,6,19), //quinta-feira Corpus Christi
-new Date(2025,9,7), //domingo Independência do Brasil
-new Date(2025,10,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2025,11,2), //domingo Finados
-new Date(2025,11,15), //sábado Proclamação da República
-new Date(2025,12,25), //quinta-feira Natal
-new Date(2026,1,1), //quinta-feira Confraternização Universal
-new Date(2026,2,16), //segunda-feira Carnaval
-new Date(2026,2,17), //terça-feira Carnaval
-new Date(2026,4,3), //sexta-feira Paixão de Cristo
-new Date(2026,4,21), //terça-feira Tiradentes
-new Date(2026,5,1), //sexta-feira Dia do Trabalho
-new Date(2026,6,4), //quinta-feira Corpus Christi
-new Date(2026,9,7), //segunda-feira Independência do Brasil
-new Date(2026,10,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2026,11,2), //segunda-feira Finados
-new Date(2026,11,15), //domingo Proclamação da República
-new Date(2026,12,25), //sexta-feira Natal
-new Date(2027,1,1), //sexta-feira Confraternização Universal
-new Date(2027,2,8), //segunda-feira Carnaval
-new Date(2027,2,9), //terça-feira Carnaval
-new Date(2027,3,26), //sexta-feira Paixão de Cristo
-new Date(2027,4,21), //quarta-feira Tiradentes
-new Date(2027,5,1), //sábado Dia do Trabalho
-new Date(2027,5,27), //quinta-feira Corpus Christi
-new Date(2027,9,7), //terça-feira Independência do Brasil
-new Date(2027,10,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2027,11,2), //terça-feira Finados
-new Date(2027,11,15), //segunda-feira Proclamação da República
-new Date(2027,12,25), //sábado Natal
-new Date(2028,1,1), //sábado Confraternização Universal
-new Date(2028,2,28), //segunda-feira Carnaval
-new Date(2028,2,29), //terça-feira Carnaval
-new Date(2028,4,14), //sexta-feira Paixão de Cristo
-new Date(2028,4,21), //sexta-feira Tiradentes
-new Date(2028,5,1), //segunda-feira Dia do Trabalho
-new Date(2028,6,15), //quinta-feira Corpus Christi
-new Date(2028,9,7), //quinta-feira Independência do Brasil
-new Date(2028,10,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2028,11,2), //quinta-feira Finados
-new Date(2028,11,15), //quarta-feira Proclamação da República
-new Date(2028,12,25), //segunda-feira Natal
-new Date(2029,1,1), //segunda-feira Confraternização Universal
-new Date(2029,2,12), //segunda-feira Carnaval
-new Date(2029,2,13), //terça-feira Carnaval
-new Date(2029,3,30), //sexta-feira Paixão de Cristo
-new Date(2029,4,21), //sábado Tiradentes
-new Date(2029,5,1), //terça-feira Dia do Trabalho
-new Date(2029,5,31), //quinta-feira Corpus Christi
-new Date(2029,9,7), //sexta-feira Independência do Brasil
-new Date(2029,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2029,11,2), //sexta-feira Finados
-new Date(2029,11,15), //quinta-feira Proclamação da República
-new Date(2029,12,25), //terça-feira Natal
-new Date(2030,1,1), //terça-feira Confraternização Universal
-new Date(2030,3,4), //segunda-feira Carnaval
-new Date(2030,3,5), //terça-feira Carnaval
-new Date(2030,4,19), //sexta-feira Paixão de Cristo
-new Date(2030,4,21), //domingo Tiradentes
-new Date(2030,5,1), //quarta-feira Dia do Trabalho
-new Date(2030,6,20), //quinta-feira Corpus Christi
-new Date(2030,9,7), //sábado Independência do Brasil
-new Date(2030,10,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2030,11,2), //sábado Finados
-new Date(2030,11,15), //sexta-feira Proclamação da República
-new Date(2030,12,25), //quarta-feira Natal
-new Date(2031,1,1), //quarta-feira Confraternização Universal
-new Date(2031,2,24), //segunda-feira Carnaval
-new Date(2031,2,25), //terça-feira Carnaval
-new Date(2031,4,11), //sexta-feira Paixão de Cristo
-new Date(2031,4,21), //segunda-feira Tiradentes
-new Date(2031,5,1), //quinta-feira Dia do Trabalho
-new Date(2031,6,12), //quinta-feira Corpus Christi
-new Date(2031,9,7), //domingo Independência do Brasil
-new Date(2031,10,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2031,11,2), //domingo Finados
-new Date(2031,11,15), //sábado Proclamação da República
-new Date(2031,12,25), //quinta-feira Natal
-new Date(2032,1,1), //quinta-feira Confraternização Universal
-new Date(2032,2,9), //segunda-feira Carnaval
-new Date(2032,2,10), //terça-feira Carnaval
-new Date(2032,3,26), //sexta-feira Paixão de Cristo
-new Date(2032,4,21), //quarta-feira Tiradentes
-new Date(2032,5,1), //sábado Dia do Trabalho
-new Date(2032,5,27), //quinta-feira Corpus Christi
-new Date(2032,9,7), //terça-feira Independência do Brasil
-new Date(2032,10,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2032,11,2), //terça-feira Finados
-new Date(2032,11,15), //segunda-feira Proclamação da República
-new Date(2032,12,25), //sábado Natal
-new Date(2033,1,1), //sábado Confraternização Universal
-new Date(2033,2,28), //segunda-feira Carnaval
-new Date(2033,3,1), //terça-feira Carnaval
-new Date(2033,4,15), //sexta-feira Paixão de Cristo
-new Date(2033,4,21), //quinta-feira Tiradentes
-new Date(2033,5,1), //domingo Dia do Trabalho
-new Date(2033,6,16), //quinta-feira Corpus Christi
-new Date(2033,9,7), //quarta-feira Independência do Brasil
-new Date(2033,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2033,11,2), //quarta-feira Finados
-new Date(2033,11,15), //terça-feira Proclamação da República
-new Date(2033,12,25), //domingo Natal
-new Date(2034,1,1), //domingo Confraternização Universal
-new Date(2034,2,20), //segunda-feira Carnaval
-new Date(2034,2,21), //terça-feira Carnaval
-new Date(2034,4,7), //sexta-feira Paixão de Cristo
-new Date(2034,4,21), //sexta-feira Tiradentes
-new Date(2034,5,1), //segunda-feira Dia do Trabalho
-new Date(2034,6,8), //quinta-feira Corpus Christi
-new Date(2034,9,7), //quinta-feira Independência do Brasil
-new Date(2034,10,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2034,11,2), //quinta-feira Finados
-new Date(2034,11,15), //quarta-feira Proclamação da República
-new Date(2034,12,25), //segunda-feira Natal
-new Date(2035,1,1), //segunda-feira Confraternização Universal
-new Date(2035,2,5), //segunda-feira Carnaval
-new Date(2035,2,6), //terça-feira Carnaval
-new Date(2035,3,23), //sexta-feira Paixão de Cristo
-new Date(2035,4,21), //sábado Tiradentes
-new Date(2035,5,1), //terça-feira Dia do Trabalho
-new Date(2035,5,24), //quinta-feira Corpus Christi
-new Date(2035,9,7), //sexta-feira Independência do Brasil
-new Date(2035,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2035,11,2), //sexta-feira Finados
-new Date(2035,11,15), //quinta-feira Proclamação da República
-new Date(2035,12,25), //terça-feira Natal
-new Date(2036,1,1), //terça-feira Confraternização Universal
-new Date(2036,2,25), //segunda-feira Carnaval
-new Date(2036,2,26), //terça-feira Carnaval
-new Date(2036,4,11), //sexta-feira Paixão de Cristo
-new Date(2036,4,21), //segunda-feira Tiradentes
-new Date(2036,5,1), //quinta-feira Dia do Trabalho
-new Date(2036,6,12), //quinta-feira Corpus Christi
-new Date(2036,9,7), //domingo Independência do Brasil
-new Date(2036,10,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2036,11,2), //domingo Finados
-new Date(2036,11,15), //sábado Proclamação da República
-new Date(2036,12,25), //quinta-feira Natal
-new Date(2037,1,1), //quinta-feira Confraternização Universal
-new Date(2037,2,16), //segunda-feira Carnaval
-new Date(2037,2,17), //terça-feira Carnaval
-new Date(2037,4,3), //sexta-feira Paixão de Cristo
-new Date(2037,4,21), //terça-feira Tiradentes
-new Date(2037,5,1), //sexta-feira Dia do Trabalho
-new Date(2037,6,4), //quinta-feira Corpus Christi
-new Date(2037,9,7), //segunda-feira Independência do Brasil
-new Date(2037,10,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2037,11,2), //segunda-feira Finados
-new Date(2037,11,15), //domingo Proclamação da República
-new Date(2037,12,25), //sexta-feira Natal
-new Date(2038,1,1), //sexta-feira Confraternização Universal
-new Date(2038,3,8), //segunda-feira Carnaval
-new Date(2038,3,9), //terça-feira Carnaval
-new Date(2038,4,21), //quarta-feira Tiradentes
-new Date(2038,4,23), //sexta-feira Paixão de Cristo
-new Date(2038,5,1), //sábado Dia do Trabalho
-new Date(2038,6,24), //quinta-feira Corpus Christi
-new Date(2038,9,7), //terça-feira Independência do Brasil
-new Date(2038,10,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2038,11,2), //terça-feira Finados
-new Date(2038,11,15), //segunda-feira Proclamação da República
-new Date(2038,12,25), //sábado Natal
-new Date(2039,1,1), //sábado Confraternização Universal
-new Date(2039,2,21), //segunda-feira Carnaval
-new Date(2039,2,22), //terça-feira Carnaval
-new Date(2039,4,8), //sexta-feira Paixão de Cristo
-new Date(2039,4,21), //quinta-feira Tiradentes
-new Date(2039,5,1), //domingo Dia do Trabalho
-new Date(2039,6,9), //quinta-feira Corpus Christi
-new Date(2039,9,7), //quarta-feira Independência do Brasil
-new Date(2039,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2039,11,2), //quarta-feira Finados
-new Date(2039,11,15), //terça-feira Proclamação da República
-new Date(2039,12,25), //domingo Natal
-new Date(2040,1,1), //domingo Confraternização Universal
-new Date(2040,2,13), //segunda-feira Carnaval
-new Date(2040,2,14), //terça-feira Carnaval
-new Date(2040,3,30), //sexta-feira Paixão de Cristo
-new Date(2040,4,21), //sábado Tiradentes
-new Date(2040,5,1), //terça-feira Dia do Trabalho
-new Date(2040,5,31), //quinta-feira Corpus Christi
-new Date(2040,9,7), //sexta-feira Independência do Brasil
-new Date(2040,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2040,11,2), //sexta-feira Finados
-new Date(2040,11,15), //quinta-feira Proclamação da República
-new Date(2040,12,25), //terça-feira Natal
-new Date(2041,1,1), //terça-feira Confraternização Universal
-new Date(2041,3,4), //segunda-feira Carnaval
-new Date(2041,3,5), //terça-feira Carnaval
-new Date(2041,4,19), //sexta-feira Paixão de Cristo
-new Date(2041,4,21), //domingo Tiradentes
-new Date(2041,5,1), //quarta-feira Dia do Trabalho
-new Date(2041,6,20), //quinta-feira Corpus Christi
-new Date(2041,9,7), //sábado Independência do Brasil
-new Date(2041,10,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2041,11,2), //sábado Finados
-new Date(2041,11,15), //sexta-feira Proclamação da República
-new Date(2041,12,25), //quarta-feira Natal
-new Date(2042,1,1), //quarta-feira Confraternização Universal
-new Date(2042,2,17), //segunda-feira Carnaval
-new Date(2042,2,18), //terça-feira Carnaval
-new Date(2042,4,4), //sexta-feira Paixão de Cristo
-new Date(2042,4,21), //segunda-feira Tiradentes
-new Date(2042,5,1), //quinta-feira Dia do Trabalho
-new Date(2042,6,5), //quinta-feira Corpus Christi
-new Date(2042,9,7), //domingo Independência do Brasil
-new Date(2042,10,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2042,11,2), //domingo Finados
-new Date(2042,11,15), //sábado Proclamação da República
-new Date(2042,12,25), //quinta-feira Natal
-new Date(2043,1,1), //quinta-feira Confraternização Universal
-new Date(2043,2,9), //segunda-feira Carnaval
-new Date(2043,2,10), //terça-feira Carnaval
-new Date(2043,3,27), //sexta-feira Paixão de Cristo
-new Date(2043,4,21), //terça-feira Tiradentes
-new Date(2043,5,1), //sexta-feira Dia do Trabalho
-new Date(2043,5,28), //quinta-feira Corpus Christi
-new Date(2043,9,7), //segunda-feira Independência do Brasil
-new Date(2043,10,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2043,11,2), //segunda-feira Finados
-new Date(2043,11,15), //domingo Proclamação da República
-new Date(2043,12,25), //sexta-feira Natal
-new Date(2044,1,1), //sexta-feira Confraternização Universal
-new Date(2044,2,29), //segunda-feira Carnaval
-new Date(2044,3,1), //terça-feira Carnaval
-new Date(2044,4,15), //sexta-feira Paixão de Cristo
-new Date(2044,4,21), //quinta-feira Tiradentes
-new Date(2044,5,1), //domingo Dia do Trabalho
-new Date(2044,6,16), //quinta-feira Corpus Christi
-new Date(2044,9,7), //quarta-feira Independência do Brasil
-new Date(2044,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2044,11,2), //quarta-feira Finados
-new Date(2044,11,15), //terça-feira Proclamação da República
-new Date(2044,12,25), //domingo Natal
-new Date(2045,1,1), //domingo Confraternização Universal
-new Date(2045,2,20), //segunda-feira Carnaval
-new Date(2045,2,21), //terça-feira Carnaval
-new Date(2045,4,7), //sexta-feira Paixão de Cristo
-new Date(2045,4,21), //sexta-feira Tiradentes
-new Date(2045,5,1), //segunda-feira Dia do Trabalho
-new Date(2045,6,8), //quinta-feira Corpus Christi
-new Date(2045,9,7), //quinta-feira Independência do Brasil
-new Date(2045,10,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2045,11,2), //quinta-feira Finados
-new Date(2045,11,15), //quarta-feira Proclamação da República
-new Date(2045,12,25), //segunda-feira Natal
-new Date(2046,1,1), //segunda-feira Confraternização Universal
-new Date(2046,2,5), //segunda-feira Carnaval
-new Date(2046,2,6), //terça-feira Carnaval
-new Date(2046,3,23), //sexta-feira Paixão de Cristo
-new Date(2046,4,21), //sábado Tiradentes
-new Date(2046,5,1), //terça-feira Dia do Trabalho
-new Date(2046,5,24), //quinta-feira Corpus Christi
-new Date(2046,9,7), //sexta-feira Independência do Brasil
-new Date(2046,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2046,11,2), //sexta-feira Finados
-new Date(2046,11,15), //quinta-feira Proclamação da República
-new Date(2046,12,25), //terça-feira Natal
-new Date(2047,1,1), //terça-feira Confraternização Universal
-new Date(2047,2,25), //segunda-feira Carnaval
-new Date(2047,2,26), //terça-feira Carnaval
-new Date(2047,4,12), //sexta-feira Paixão de Cristo
-new Date(2047,4,21), //terça-feira Tiradentes
-new Date(2047,5,1), //quarta-feira Dia do Trabalho
-new Date(2047,6,13), //quinta-feira Corpus Christi
-new Date(2047,9,7), //sábado Independência do Brasil
-new Date(2047,10,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2047,11,2), //sábado Finados
-new Date(2047,11,15), //sexta-feira Proclamação da República
-new Date(2047,12,25), //quarta-feira Natal
-new Date(2048,1,1), //quarta-feira Confraternização Universal
-new Date(2048,2,17), //segunda-feira Carnaval
-new Date(2048,2,18), //terça-feira Carnaval
-new Date(2048,4,3), //sexta-feira Paixão de Cristo
-new Date(2048,4,21), //terça-feira Tiradentes
-new Date(2048,5,1), //sexta-feira Dia do Trabalho
-new Date(2048,6,4), //quinta-feira Corpus Christi
-new Date(2048,9,7), //segunda-feira Independência do Brasil
-new Date(2048,10,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2048,11,2), //segunda-feira Finados
-new Date(2048,11,15), //domingo Proclamação da República
-new Date(2048,12,25), //sexta-feira Natal
-new Date(2049,1,1), //sexta-feira Confraternização Universal
-new Date(2049,3,1), //segunda-feira Carnaval
-new Date(2049,3,2), //terça-feira Carnaval
-new Date(2049,4,16), //sexta-feira Paixão de Cristo
-new Date(2049,4,21), //quarta-feira Tiradentes
-new Date(2049,5,1), //sábado Dia do Trabalho
-new Date(2049,6,17), //quinta-feira Corpus Christi
-new Date(2049,9,7), //terça-feira Independência do Brasil
-new Date(2049,10,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2049,11,2), //terça-feira Finados
-new Date(2049,11,15), //segunda-feira Proclamação da República
-new Date(2049,12,25), //sábado Natal
-new Date(2050,1,1), //sábado Confraternização Universal
-new Date(2050,2,21), //segunda-feira Carnaval
-new Date(2050,2,22), //terça-feira Carnaval
-new Date(2050,4,8), //sexta-feira Paixão de Cristo
-new Date(2050,4,21), //quinta-feira Tiradentes
-new Date(2050,5,1), //domingo Dia do Trabalho
-new Date(2050,6,9), //quinta-feira Corpus Christi
-new Date(2050,9,7), //quarta-feira Independência do Brasil
-new Date(2050,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2050,11,2), //quarta-feira Finados
-new Date(2050,11,15), //terça-feira Proclamação da República
-new Date(2050,12,25), //domingo Natal
-new Date(2051,1,1), //domingo Confraternização Universal
-new Date(2051,2,13), //segunda-feira Carnaval
-new Date(2051,2,14), //terça-feira Carnaval
-new Date(2051,3,31), //sexta-feira Paixão de Cristo
-new Date(2051,4,21), //sexta-feira Tiradentes
-new Date(2051,5,1), //segunda-feira Dia do Trabalho
-new Date(2051,6,1), //quinta-feira Corpus Christi
-new Date(2051,9,7), //quinta-feira Independência do Brasil
-new Date(2051,10,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2051,11,2), //quinta-feira Finados
-new Date(2051,11,15), //quarta-feira Proclamação da República
-new Date(2051,12,25), //segunda-feira Natal
-new Date(2052,1,1), //segunda-feira Confraternização Universal
-new Date(2052,3,4), //segunda-feira Carnaval
-new Date(2052,3,5), //terça-feira Carnaval
-new Date(2052,4,19), //sexta-feira Paixão de Cristo
-new Date(2052,4,21), //domingo Tiradentes
-new Date(2052,5,1), //quarta-feira Dia do Trabalho
-new Date(2052,6,20), //quinta-feira Corpus Christi
-new Date(2052,9,7), //sábado Independência do Brasil
-new Date(2052,10,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2052,11,2), //sábado Finados
-new Date(2052,11,15), //sexta-feira Proclamação da República
-new Date(2052,12,25), //quarta-feira Natal
-new Date(2053,1,1), //quarta-feira Confraternização Universal
-new Date(2053,2,17), //segunda-feira Carnaval
-new Date(2053,2,18), //terça-feira Carnaval
-new Date(2053,4,4), //sexta-feira Paixão de Cristo
-new Date(2053,4,21), //segunda-feira Tiradentes
-new Date(2053,5,1), //quinta-feira Dia do Trabalho
-new Date(2053,6,5), //quinta-feira Corpus Christi
-new Date(2053,9,7), //domingo Independência do Brasil
-new Date(2053,10,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2053,11,2), //domingo Finados
-new Date(2053,11,15), //sábado Proclamação da República
-new Date(2053,12,25), //quinta-feira Natal
-new Date(2054,1,1), //quinta-feira Confraternização Universal
-new Date(2054,2,9), //segunda-feira Carnaval
-new Date(2054,2,10), //terça-feira Carnaval
-new Date(2054,3,27), //sexta-feira Paixão de Cristo
-new Date(2054,4,21), //terça-feira Tiradentes
-new Date(2054,5,1), //sexta-feira Dia do Trabalho
-new Date(2054,5,28), //quinta-feira Corpus Christi
-new Date(2054,9,7), //segunda-feira Independência do Brasil
-new Date(2054,10,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2054,11,2), //segunda-feira Finados
-new Date(2054,11,15), //domingo Proclamação da República
-new Date(2054,12,25), //sexta-feira Natal
-new Date(2055,1,1), //sexta-feira Confraternização Universal
-new Date(2055,3,1), //segunda-feira Carnaval
-new Date(2055,3,2), //terça-feira Carnaval
-new Date(2055,4,16), //sexta-feira Paixão de Cristo
-new Date(2055,4,21), //quarta-feira Tiradentes
-new Date(2055,5,1), //sábado Dia do Trabalho
-new Date(2055,6,17), //quinta-feira Corpus Christi
-new Date(2055,9,7), //terça-feira Independência do Brasil
-new Date(2055,10,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2055,11,2), //terça-feira Finados
-new Date(2055,11,15), //segunda-feira Proclamação da República
-new Date(2055,12,25), //sábado Natal
-new Date(2056,1,1), //sábado Confraternização Universal
-new Date(2056,2,14), //segunda-feira Carnaval
-new Date(2056,2,15), //terça-feira Carnaval
-new Date(2056,3,31), //sexta-feira Paixão de Cristo
-new Date(2056,4,21), //sexta-feira Tiradentes
-new Date(2056,5,1), //segunda-feira Dia do Trabalho
-new Date(2056,6,1), //quinta-feira Corpus Christi
-new Date(2056,9,7), //quinta-feira Independência do Brasil
-new Date(2056,10,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2056,11,2), //quinta-feira Finados
-new Date(2056,11,15), //quarta-feira Proclamação da República
-new Date(2056,12,25), //segunda-feira Natal
-new Date(2057,1,1), //segunda-feira Confraternização Universal
-new Date(2057,3,5), //segunda-feira Carnaval
-new Date(2057,3,6), //terça-feira Carnaval
-new Date(2057,4,20), //sexta-feira Paixão de Cristo
-new Date(2057,4,21), //sábado Tiradentes
-new Date(2057,5,1), //terça-feira Dia do Trabalho
-new Date(2057,6,21), //quinta-feira Corpus Christi
-new Date(2057,9,7), //sexta-feira Independência do Brasil
-new Date(2057,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2057,11,2), //sexta-feira Finados
-new Date(2057,11,15), //quinta-feira Proclamação da República
-new Date(2057,12,25), //terça-feira Natal
-new Date(2058,1,1), //terça-feira Confraternização Universal
-new Date(2058,2,25), //segunda-feira Carnaval
-new Date(2058,2,26), //terça-feira Carnaval
-new Date(2058,4,12), //sexta-feira Paixão de Cristo
-new Date(2058,4,21), //domingo Tiradentes
-new Date(2058,5,1), //quarta-feira Dia do Trabalho
-new Date(2058,6,13), //quinta-feira Corpus Christi
-new Date(2058,9,7), //sábado Independência do Brasil
-new Date(2058,10,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2058,11,2), //sábado Finados
-new Date(2058,11,15), //sexta-feira Proclamação da República
-new Date(2058,12,25), //quarta-feira Natal
-new Date(2059,1,1), //quarta-feira Confraternização Universal
-new Date(2059,2,10), //segunda-feira Carnaval
-new Date(2059,2,11), //terça-feira Carnaval
-new Date(2059,3,28), //sexta-feira Paixão de Cristo
-new Date(2059,4,21), //segunda-feira Tiradentes
-new Date(2059,5,1), //quinta-feira Dia do Trabalho
-new Date(2059,5,29), //quinta-feira Corpus Christi
-new Date(2059,9,7), //domingo Independência do Brasil
-new Date(2059,10,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2059,11,2), //domingo Finados
-new Date(2059,11,15), //sábado Proclamação da República
-new Date(2059,12,25), //quinta-feira Natal
-new Date(2060,1,1), //quinta-feira Confraternização Universal
-new Date(2060,3,1), //segunda-feira Carnaval
-new Date(2060,3,2), //terça-feira Carnaval
-new Date(2060,4,16), //sexta-feira Paixão de Cristo
-new Date(2060,4,21), //quarta-feira Tiradentes
-new Date(2060,5,1), //sábado Dia do Trabalho
-new Date(2060,6,17), //quinta-feira Corpus Christi
-new Date(2060,9,7), //terça-feira Independência do Brasil
-new Date(2060,10,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2060,11,2), //terça-feira Finados
-new Date(2060,11,15), //segunda-feira Proclamação da República
-new Date(2060,12,25), //sábado Natal
-new Date(2061,1,1), //sábado Confraternização Universal
-new Date(2061,2,21), //segunda-feira Carnaval
-new Date(2061,2,22), //terça-feira Carnaval
-new Date(2061,4,8), //sexta-feira Paixão de Cristo
-new Date(2061,4,21), //quinta-feira Tiradentes
-new Date(2061,5,1), //domingo Dia do Trabalho
-new Date(2061,6,9), //quinta-feira Corpus Christi
-new Date(2061,9,7), //quarta-feira Independência do Brasil
-new Date(2061,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2061,11,2), //quarta-feira Finados
-new Date(2061,11,15), //terça-feira Proclamação da República
-new Date(2061,12,25), //domingo Natal
-new Date(2062,1,1), //domingo Confraternização Universal
-new Date(2062,2,6), //segunda-feira Carnaval
-new Date(2062,2,7), //terça-feira Carnaval
-new Date(2062,3,24), //sexta-feira Paixão de Cristo
-new Date(2062,4,21), //sexta-feira Tiradentes
-new Date(2062,5,1), //segunda-feira Dia do Trabalho
-new Date(2062,5,25), //quinta-feira Corpus Christi
-new Date(2062,9,7), //quinta-feira Independência do Brasil
-new Date(2062,10,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2062,11,2), //quinta-feira Finados
-new Date(2062,11,15), //quarta-feira Proclamação da República
-new Date(2062,12,25), //segunda-feira Natal
-new Date(2063,1,1), //segunda-feira Confraternização Universal
-new Date(2063,2,26), //segunda-feira Carnaval
-new Date(2063,2,27), //terça-feira Carnaval
-new Date(2063,4,13), //sexta-feira Paixão de Cristo
-new Date(2063,4,21), //sábado Tiradentes
-new Date(2063,5,1), //terça-feira Dia do Trabalho
-new Date(2063,6,14), //quinta-feira Corpus Christi
-new Date(2063,9,7), //sexta-feira Independência do Brasil
-new Date(2063,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2063,11,2), //sexta-feira Finados
-new Date(2063,11,15), //quinta-feira Proclamação da República
-new Date(2063,12,25), //terça-feira Natal
-new Date(2064,1,1), //terça-feira Confraternização Universal
-new Date(2064,2,18), //segunda-feira Carnaval
-new Date(2064,2,19), //terça-feira Carnaval
-new Date(2064,4,4), //sexta-feira Paixão de Cristo
-new Date(2064,4,21), //segunda-feira Tiradentes
-new Date(2064,5,1), //quinta-feira Dia do Trabalho
-new Date(2064,6,5), //quinta-feira Corpus Christi
-new Date(2064,9,7), //domingo Independência do Brasil
-new Date(2064,10,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2064,11,2), //domingo Finados
-new Date(2064,11,15), //sábado Proclamação da República
-new Date(2064,12,25), //quinta-feira Natal
-new Date(2065,1,1), //quinta-feira Confraternização Universal
-new Date(2065,2,9), //segunda-feira Carnaval
-new Date(2065,2,10), //terça-feira Carnaval
-new Date(2065,3,27), //sexta-feira Paixão de Cristo
-new Date(2065,4,21), //terça-feira Tiradentes
-new Date(2065,5,1), //sexta-feira Dia do Trabalho
-new Date(2065,5,28), //quinta-feira Corpus Christi
-new Date(2065,9,7), //segunda-feira Independência do Brasil
-new Date(2065,10,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2065,11,2), //segunda-feira Finados
-new Date(2065,11,15), //domingo Proclamação da República
-new Date(2065,12,25), //sexta-feira Natal
-new Date(2066,1,1), //sexta-feira Confraternização Universal
-new Date(2066,2,22), //segunda-feira Carnaval
-new Date(2066,2,23), //terça-feira Carnaval
-new Date(2066,4,9), //sexta-feira Paixão de Cristo
-new Date(2066,4,21), //quarta-feira Tiradentes
-new Date(2066,5,1), //sábado Dia do Trabalho
-new Date(2066,6,10), //quinta-feira Corpus Christi
-new Date(2066,9,7), //terça-feira Independência do Brasil
-new Date(2066,10,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2066,11,2), //terça-feira Finados
-new Date(2066,11,15), //segunda-feira Proclamação da República
-new Date(2066,12,25), //sábado Natal
-new Date(2067,1,1), //sábado Confraternização Universal
-new Date(2067,2,14), //segunda-feira Carnaval
-new Date(2067,2,15), //terça-feira Carnaval
-new Date(2067,4,1), //sexta-feira Paixão de Cristo
-new Date(2067,4,21), //quinta-feira Tiradentes
-new Date(2067,5,1), //domingo Dia do Trabalho
-new Date(2067,6,2), //quinta-feira Corpus Christi
-new Date(2067,9,7), //quarta-feira Independência do Brasil
-new Date(2067,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2067,11,2), //quarta-feira Finados
-new Date(2067,11,15), //terça-feira Proclamação da República
-new Date(2067,12,25), //domingo Natal
-new Date(2068,1,1), //domingo Confraternização Universal
-new Date(2068,3,5), //segunda-feira Carnaval
-new Date(2068,3,6), //terça-feira Carnaval
-new Date(2068,4,20), //sexta-feira Paixão de Cristo
-new Date(2068,4,21), //sábado Tiradentes
-new Date(2068,5,1), //terça-feira Dia do Trabalho
-new Date(2068,6,21), //quinta-feira Corpus Christi
-new Date(2068,9,7), //sexta-feira Independência do Brasil
-new Date(2068,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2068,11,2), //sexta-feira Finados
-new Date(2068,11,15), //quinta-feira Proclamação da República
-new Date(2068,12,25), //terça-feira Natal
-new Date(2069,1,1), //terça-feira Confraternização Universal
-new Date(2069,2,25), //segunda-feira Carnaval
-new Date(2069,2,26), //terça-feira Carnaval
-new Date(2069,4,12), //sexta-feira Paixão de Cristo
-new Date(2069,4,21), //domingo Tiradentes
-new Date(2069,5,1), //quarta-feira Dia do Trabalho
-new Date(2069,6,13), //quinta-feira Corpus Christi
-new Date(2069,9,7), //sábado Independência do Brasil
-new Date(2069,10,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2069,11,2), //sábado Finados
-new Date(2069,11,15), //sexta-feira Proclamação da República
-new Date(2069,12,25), //quarta-feira Natal
-new Date(2070,1,1), //quarta-feira Confraternização Universal
-new Date(2070,2,10), //segunda-feira Carnaval
-new Date(2070,2,11), //terça-feira Carnaval
-new Date(2070,3,28), //sexta-feira Paixão de Cristo
-new Date(2070,4,21), //segunda-feira Tiradentes
-new Date(2070,5,1), //quinta-feira Dia do Trabalho
-new Date(2070,5,29), //quinta-feira Corpus Christi
-new Date(2070,9,7), //domingo Independência do Brasil
-new Date(2070,10,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2070,11,2), //domingo Finados
-new Date(2070,11,15), //sábado Proclamação da República
-new Date(2070,12,25), //quinta-feira Natal
-new Date(2071,1,1), //quinta-feira Confraternização Universal
-new Date(2071,3,2), //segunda-feira Carnaval
-new Date(2071,3,3), //terça-feira Carnaval
-new Date(2071,4,17), //sexta-feira Paixão de Cristo
-new Date(2071,4,21), //terça-feira Tiradentes
-new Date(2071,5,1), //sexta-feira Dia do Trabalho
-new Date(2071,6,18), //quinta-feira Corpus Christi
-new Date(2071,9,7), //segunda-feira Independência do Brasil
-new Date(2071,10,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2071,11,2), //segunda-feira Finados
-new Date(2071,11,15), //domingo Proclamação da República
-new Date(2071,12,25), //sexta-feira Natal
-new Date(2072,1,1), //sexta-feira Confraternização Universal
-new Date(2072,2,22), //segunda-feira Carnaval
-new Date(2072,2,23), //terça-feira Carnaval
-new Date(2072,4,8), //sexta-feira Paixão de Cristo
-new Date(2072,4,21), //quinta-feira Tiradentes
-new Date(2072,5,1), //domingo Dia do Trabalho
-new Date(2072,6,9), //quinta-feira Corpus Christi
-new Date(2072,9,7), //quarta-feira Independência do Brasil
-new Date(2072,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2072,11,2), //quarta-feira Finados
-new Date(2072,11,15), //terça-feira Proclamação da República
-new Date(2072,12,25), //domingo Natal
-new Date(2073,1,1), //domingo Confraternização Universal
-new Date(2073,2,6), //segunda-feira Carnaval
-new Date(2073,2,7), //terça-feira Carnaval
-new Date(2073,3,24), //sexta-feira Paixão de Cristo
-new Date(2073,4,21), //sexta-feira Tiradentes
-new Date(2073,5,1), //segunda-feira Dia do Trabalho
-new Date(2073,5,25), //quinta-feira Corpus Christi
-new Date(2073,9,7), //quinta-feira Independência do Brasil
-new Date(2073,10,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2073,11,2), //quinta-feira Finados
-new Date(2073,11,15), //quarta-feira Proclamação da República
-new Date(2073,12,25), //segunda-feira Natal
-new Date(2074,1,1), //segunda-feira Confraternização Universal
-new Date(2074,2,26), //segunda-feira Carnaval
-new Date(2074,2,27), //terça-feira Carnaval
-new Date(2074,4,13), //sexta-feira Paixão de Cristo
-new Date(2074,4,21), //sábado Tiradentes
-new Date(2074,5,1), //terça-feira Dia do Trabalho
-new Date(2074,6,14), //quinta-feira Corpus Christi
-new Date(2074,9,7), //sexta-feira Independência do Brasil
-new Date(2074,10,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2074,11,2), //sexta-feira Finados
-new Date(2074,11,15), //quinta-feira Proclamação da República
-new Date(2074,12,25), //terça-feira Natal
-new Date(2075,1,1), //terça-feira Confraternização Universal
-new Date(2075,2,18), //segunda-feira Carnaval
-new Date(2075,2,19), //terça-feira Carnaval
-new Date(2075,4,5), //sexta-feira Paixão de Cristo
-new Date(2075,4,21), //domingo Tiradentes
-new Date(2075,5,1), //quarta-feira Dia do Trabalho
-new Date(2075,6,6), //quinta-feira Corpus Christi
-new Date(2075,9,7), //sábado Independência do Brasil
-new Date(2075,10,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2075,11,2), //sábado Finados
-new Date(2075,11,15), //sexta-feira Proclamação da República
-new Date(2075,12,25), //quarta-feira Natal
-new Date(2076,1,1), //quarta-feira Confraternização Universal
-new Date(2076,3,2), //segunda-feira Carnaval
-new Date(2076,3,3), //terça-feira Carnaval
-new Date(2076,4,17), //sexta-feira Paixão de Cristo
-new Date(2076,4,21), //terça-feira Tiradentes
-new Date(2076,5,1), //sexta-feira Dia do Trabalho
-new Date(2076,6,18), //quinta-feira Corpus Christi
-new Date(2076,9,7), //segunda-feira Independência do Brasil
-new Date(2076,10,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2076,11,2), //segunda-feira Finados
-new Date(2076,11,15), //domingo Proclamação da República
-new Date(2076,12,25), //sexta-feira Natal
-new Date(2077,1,1), //sexta-feira Confraternização Universal
-new Date(2077,2,22), //segunda-feira Carnaval
-new Date(2077,2,23), //terça-feira Carnaval
-new Date(2077,4,9), //sexta-feira Paixão de Cristo
-new Date(2077,4,21), //quarta-feira Tiradentes
-new Date(2077,5,1), //sábado Dia do Trabalho
-new Date(2077,6,10), //quinta-feira Corpus Christi
-new Date(2077,9,7), //terça-feira Independência do Brasil
-new Date(2077,10,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2077,11,2), //terça-feira Finados
-new Date(2077,11,15), //segunda-feira Proclamação da República
-new Date(2077,12,25), //sábado Natal
-new Date(2078,1,1), //terça-feira Confraternização Universal
-new Date(2078,2,14), //segunda-feira Carnaval
-new Date(2078,2,15), //terça-feira Carnaval
-new Date(2078,4,1), //sexta-feira Paixão de Cristo
-new Date(2078,4,21), //quinta-feira Tiradentes
-new Date(2078,5,1), //quarta-feira Dia do Trabalho
-new Date(2078,6,2), //quinta-feira Corpus Christi
-new Date(2078,9,7), //quarta-feira Independência do Brasil
-new Date(2078,10,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
-new Date(2078,11,2), //quarta-feira Finados
-new Date(2078,11,15), //terça-feira Proclamação da República
-new Date(2078,12,25)]; //quarta-feira Natal
+var holydays = [new Date(2001,0,1), //segunda-feira Confraternização Universal
+new Date(2001,1,26), //segunda-feira Carnaval
+new Date(2001,1,27), //terça-feira Carnaval
+new Date(2001,3,13), //sexta-feira Paixão de Cristo
+new Date(2001,3,21), //sábado Tiradentes
+new Date(2001,4,1), //terça-feira Dia do Trabalho
+new Date(2001,5,14), //quinta-feira Corpus Christi
+new Date(2001,8,7), //sexta-feira Independência do Brasil
+new Date(2001,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2001,10,2), //sexta-feira Finados
+new Date(2001,10,15), //quinta-feira Proclamação da República
+new Date(2001,11,25), //terça-feira Natal
+new Date(2002,0,1), //terça-feira Confraternização Universal
+new Date(2002,1,11), //segunda-feira Carnaval
+new Date(2002,1,12), //terça-feira Carnaval
+new Date(2002,2,29), //sexta-feira Paixão de Cristo
+new Date(2002,3,21), //domingo Tiradentes
+new Date(2002,4,1), //quarta-feira Dia do Trabalho
+new Date(2002,4,30), //quinta-feira Corpus Christi
+new Date(2002,8,7), //sábado Independência do Brasil
+new Date(2002,9,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2002,10,2), //sábado Finados
+new Date(2002,10,15), //sexta-feira Proclamação da República
+new Date(2002,11,25), //quarta-feira Natal
+new Date(2003,0,1), //quarta-feira Confraternização Universal
+new Date(2003,2,3), //segunda-feira Carnaval
+new Date(2003,2,4), //terça-feira Carnaval
+new Date(2003,3,18), //sexta-feira Paixão de Cristo
+new Date(2003,3,21), //segunda-feira Tiradentes
+new Date(2003,4,1), //quinta-feira Dia do Trabalho
+new Date(2003,5,19), //quinta-feira Corpus Christi
+new Date(2003,8,7), //domingo Independência do Brasil
+new Date(2003,9,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2003,10,2), //domingo Finados
+new Date(2003,10,15), //sábado Proclamação da República
+new Date(2003,11,25), //quinta-feira Natal
+new Date(2004,0,1), //quinta-feira Confraternização Universal
+new Date(2004,1,23), //segunda-feira Carnaval
+new Date(2004,1,24), //terça-feira Carnaval
+new Date(2004,3,9), //sexta-feira Paixão de Cristo
+new Date(2004,3,21), //quarta-feira Tiradentes
+new Date(2004,4,1), //sábado Dia do Trabalho
+new Date(2004,5,10), //quinta-feira Corpus Christi
+new Date(2004,8,7), //terça-feira Independência do Brasil
+new Date(2004,9,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2004,10,2), //terça-feira Finados
+new Date(2004,10,15), //segunda-feira Proclamação da República
+new Date(2004,11,25), //sábado Natal
+new Date(2005,0,1), //sábado Confraternização Universal
+new Date(2005,1,7), //segunda-feira Carnaval
+new Date(2005,1,8), //terça-feira Carnaval
+new Date(2005,2,25), //sexta-feira Paixão de Cristo
+new Date(2005,3,21), //quinta-feira Tiradentes
+new Date(2005,4,1), //domingo Dia do Trabalho
+new Date(2005,4,26), //quinta-feira Corpus Christi
+new Date(2005,8,7), //quarta-feira Independência do Brasil
+new Date(2005,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2005,10,2), //quarta-feira Finados
+new Date(2005,10,15), //terça-feira Proclamação da República
+new Date(2005,11,25), //domingo Natal
+new Date(2006,0,1), //domingo Confraternização Universal
+new Date(2006,1,27), //segunda-feira Carnaval
+new Date(2006,1,28), //terça-feira Carnaval
+new Date(2006,3,14), //sexta-feira Paixão de Cristo
+new Date(2006,3,21), //sexta-feira Tiradentes
+new Date(2006,4,1), //segunda-feira Dia do Trabalho
+new Date(2006,5,15), //quinta-feira Corpus Christi
+new Date(2006,8,7), //quinta-feira Independência do Brasil
+new Date(2006,9,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2006,10,2), //quinta-feira Finados
+new Date(2006,10,15), //quarta-feira Proclamação da República
+new Date(2006,11,25), //segunda-feira Natal
+new Date(2007,0,1), //segunda-feira Confraternização Universal
+new Date(2007,1,19), //segunda-feira Carnaval
+new Date(2007,1,20), //terça-feira Carnaval
+new Date(2007,3,6), //sexta-feira Paixão de Cristo
+new Date(2007,3,21), //sábado Tiradentes
+new Date(2007,4,1), //terça-feira Dia do Trabalho
+new Date(2007,5,7), //quinta-feira Corpus Christi
+new Date(2007,8,7), //sexta-feira Independência do Brasil
+new Date(2007,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2007,10,2), //sexta-feira Finados
+new Date(2007,10,15), //quinta-feira Proclamação da República
+new Date(2007,11,25), //terça-feira Natal
+new Date(2008,0,1), //terça-feira Confraternização Universal
+new Date(2008,1,4), //segunda-feira Carnaval
+new Date(2008,1,5), //terça-feira Carnaval
+new Date(2008,2,21), //sexta-feira Paixão de Cristo
+new Date(2008,3,21), //segunda-feira Tiradentes
+new Date(2008,4,1), //quinta-feira Dia do Trabalho
+new Date(2008,4,22), //quinta-feira Corpus Christi
+new Date(2008,8,7), //domingo Independência do Brasil
+new Date(2008,9,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2008,10,2), //domingo Finados
+new Date(2008,10,15), //sábado Proclamação da República
+new Date(2008,11,25), //quinta-feira Natal
+new Date(2009,0,1), //quinta-feira Confraternização Universal
+new Date(2009,1,23), //segunda-feira Carnaval
+new Date(2009,1,24), //terça-feira Carnaval
+new Date(2009,3,10), //sexta-feira Paixão de Cristo
+new Date(2009,3,21), //terça-feira Tiradentes
+new Date(2009,4,1), //sexta-feira Dia do Trabalho
+new Date(2009,5,11), //quinta-feira Corpus Christi
+new Date(2009,8,7), //segunda-feira Independência do Brasil
+new Date(2009,9,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2009,10,2), //segunda-feira Finados
+new Date(2009,10,15), //domingo Proclamação da República
+new Date(2009,11,25), //sexta-feira Natal
+new Date(2010,0,1), //sexta-feira Confraternização Universal
+new Date(2010,1,15), //segunda-feira Carnaval
+new Date(2010,1,16), //terça-feira Carnaval
+new Date(2010,3,2), //sexta-feira Paixão de Cristo
+new Date(2010,3,21), //quarta-feira Tiradentes
+new Date(2010,4,1), //sábado Dia do Trabalho
+new Date(2010,5,3), //quinta-feira Corpus Christi
+new Date(2010,8,7), //terça-feira Independência do Brasil
+new Date(2010,9,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2010,10,2), //terça-feira Finados
+new Date(2010,10,15), //segunda-feira Proclamação da República
+new Date(2010,11,25), //sábado Natal
+new Date(2011,0,1), //sábado Confraternização Universal
+new Date(2011,2,7), //segunda-feira Carnaval
+new Date(2011,2,8), //terça-feira Carnaval
+new Date(2011,3,21), //quinta-feira Paixão de Cristo
+new Date(2011,3,22), //sexta-feira Tiradentes
+new Date(2011,4,1), //domingo Dia do Trabalho
+new Date(2011,5,23), //quinta-feira Corpus Christi
+new Date(2011,8,7), //quarta-feira Independência do Brasil
+new Date(2011,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2011,10,2), //quarta-feira Finados
+new Date(2011,10,15), //terça-feira Proclamação da República
+new Date(2011,11,25), //domingo Natal
+new Date(2012,0,1), //domingo Confraternização Universal
+new Date(2012,1,20), //segunda-feira Carnaval
+new Date(2012,1,21), //terça-feira Carnaval
+new Date(2012,3,6), //sexta-feira Paixão de Cristo
+new Date(2012,3,21), //sábado Tiradentes
+new Date(2012,4,1), //terça-feira Dia do Trabalho
+new Date(2012,5,7), //quinta-feira Corpus Christi
+new Date(2012,8,7), //sexta-feira Independência do Brasil
+new Date(2012,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2012,10,2), //sexta-feira Finados
+new Date(2012,10,15), //quinta-feira Proclamação da República
+new Date(2012,11,25), //terça-feira Natal
+new Date(2013,0,1), //terça-feira Confraternização Universal
+new Date(2013,1,11), //segunda-feira Carnaval
+new Date(2013,1,12), //terça-feira Carnaval
+new Date(2013,2,29), //sexta-feira Paixão de Cristo
+new Date(2013,3,21), //domingo Tiradentes
+new Date(2013,4,1), //quarta-feira Dia do Trabalho
+new Date(2013,4,30), //quinta-feira Corpus Christi
+new Date(2013,8,7), //sábado Independência do Brasil
+new Date(2013,9,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2013,10,2), //sábado Finados
+new Date(2013,10,15), //sexta-feira Proclamação da República
+new Date(2013,11,25), //quarta-feira Natal
+new Date(2014,0,1), //quarta-feira Confraternização Universal
+new Date(2014,2,3), //segunda-feira Carnaval
+new Date(2014,2,4), //terça-feira Carnaval
+new Date(2014,3,18), //sexta-feira Paixão de Cristo
+new Date(2014,3,21), //segunda-feira Tiradentes
+new Date(2014,4,1), //quinta-feira Dia do Trabalho
+new Date(2014,5,19), //quinta-feira Corpus Christi
+new Date(2014,8,7), //domingo Independência do Brasil
+new Date(2014,9,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2014,10,2), //domingo Finados
+new Date(2014,10,15), //sábado Proclamação da República
+new Date(2014,11,25), //quinta-feira Natal
+new Date(2015,0,1), //quinta-feira Confraternização Universal
+new Date(2015,1,16), //segunda-feira Carnaval
+new Date(2015,1,17), //terça-feira Carnaval
+new Date(2015,3,3), //sexta-feira Paixão de Cristo
+new Date(2015,3,21), //terça-feira Tiradentes
+new Date(2015,4,1), //sexta-feira Dia do Trabalho
+new Date(2015,5,4), //quinta-feira Corpus Christi
+new Date(2015,8,7), //segunda-feira Independência do Brasil
+new Date(2015,9,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2015,10,2), //segunda-feira Finados
+new Date(2015,10,15), //domingo Proclamação da República
+new Date(2015,11,25), //sexta-feira Natal
+new Date(2016,0,1), //sexta-feira Confraternização Universal
+new Date(2016,1,8), //segunda-feira Carnaval
+new Date(2016,1,9), //terça-feira Carnaval
+new Date(2016,2,25), //sexta-feira Paixão de Cristo
+new Date(2016,3,21), //quinta-feira Tiradentes
+new Date(2016,4,1), //domingo Dia do Trabalho
+new Date(2016,4,26), //quinta-feira Corpus Christi
+new Date(2016,8,7), //quarta-feira Independência do Brasil
+new Date(2016,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2016,10,2), //quarta-feira Finados
+new Date(2016,10,15), //terça-feira Proclamação da República
+new Date(2016,11,25), //domingo Natal
+new Date(2017,0,1), //domingo Confraternização Universal
+new Date(2017,1,27), //segunda-feira Carnaval
+new Date(2017,1,28), //terça-feira Carnaval
+new Date(2017,3,14), //sexta-feira Paixão de Cristo
+new Date(2017,3,21), //sexta-feira Tiradentes
+new Date(2017,4,1), //segunda-feira Dia do Trabalho
+new Date(2017,5,15), //quinta-feira Corpus Christi
+new Date(2017,8,7), //quinta-feira Independência do Brasil
+new Date(2017,9,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2017,10,2), //quinta-feira Finados
+new Date(2017,10,15), //quarta-feira Proclamação da República
+new Date(2017,11,25), //segunda-feira Natal
+new Date(2018,0,1), //segunda-feira Confraternização Universal
+new Date(2018,1,12), //segunda-feira Carnaval
+new Date(2018,1,13), //terça-feira Carnaval
+new Date(2018,2,30), //sexta-feira Paixão de Cristo
+new Date(2018,3,21), //sábado Tiradentes
+new Date(2018,4,1), //terça-feira Dia do Trabalho
+new Date(2018,4,31), //quinta-feira Corpus Christi
+new Date(2018,8,7), //sexta-feira Independência do Brasil
+new Date(2018,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2018,10,2), //sexta-feira Finados
+new Date(2018,10,15), //quinta-feira Proclamação da República
+new Date(2018,11,25), //terça-feira Natal
+new Date(2019,0,1), //terça-feira Confraternização Universal
+new Date(2019,2,4), //segunda-feira Carnaval
+new Date(2019,2,5), //terça-feira Carnaval
+new Date(2019,3,19), //sexta-feira Paixão de Cristo
+new Date(2019,3,21), //domingo Tiradentes
+new Date(2019,4,1), //quarta-feira Dia do Trabalho
+new Date(2019,5,20), //quinta-feira Corpus Christi
+new Date(2019,8,7), //sábado Independência do Brasil
+new Date(2019,9,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2019,10,2), //sábado Finados
+new Date(2019,10,15), //sexta-feira Proclamação da República
+new Date(2019,11,25), //quarta-feira Natal
+new Date(2020,0,1), //quarta-feira Confraternização Universal
+new Date(2020,1,24), //segunda-feira Carnaval
+new Date(2020,1,25), //terça-feira Carnaval
+new Date(2020,3,10), //sexta-feira Paixão de Cristo
+new Date(2020,3,21), //terça-feira Tiradentes
+new Date(2020,4,1), //sexta-feira Dia do Trabalho
+new Date(2020,5,11), //quinta-feira Corpus Christi
+new Date(2020,8,7), //segunda-feira Independência do Brasil
+new Date(2020,9,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2020,10,2), //segunda-feira Finados
+new Date(2020,10,15), //domingo Proclamação da República
+new Date(2020,11,25), //sexta-feira Natal
+new Date(2021,0,1), //sexta-feira Confraternização Universal
+new Date(2021,1,15), //segunda-feira Carnaval
+new Date(2021,1,16), //terça-feira Carnaval
+new Date(2021,3,2), //sexta-feira Paixão de Cristo
+new Date(2021,3,21), //quarta-feira Tiradentes
+new Date(2021,4,1), //sábado Dia do Trabalho
+new Date(2021,5,3), //quinta-feira Corpus Christi
+new Date(2021,8,7), //terça-feira Independência do Brasil
+new Date(2021,9,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2021,10,2), //terça-feira Finados
+new Date(2021,10,15), //segunda-feira Proclamação da República
+new Date(2021,11,25), //sábado Natal
+new Date(2022,0,1), //sábado Confraternização Universal
+new Date(2022,1,28), //segunda-feira Carnaval
+new Date(2022,2,1), //terça-feira Carnaval
+new Date(2022,3,15), //sexta-feira Paixão de Cristo
+new Date(2022,3,21), //quinta-feira Tiradentes
+new Date(2022,4,1), //domingo Dia do Trabalho
+new Date(2022,5,16), //quinta-feira Corpus Christi
+new Date(2022,8,7), //quarta-feira Independência do Brasil
+new Date(2022,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2022,10,2), //quarta-feira Finados
+new Date(2022,10,15), //terça-feira Proclamação da República
+new Date(2022,11,25), //domingo Natal
+new Date(2023,0,1), //domingo Confraternização Universal
+new Date(2023,1,20), //segunda-feira Carnaval
+new Date(2023,1,21), //terça-feira Carnaval
+new Date(2023,3,7), //sexta-feira Paixão de Cristo
+new Date(2023,3,21), //sexta-feira Tiradentes
+new Date(2023,4,1), //segunda-feira Dia do Trabalho
+new Date(2023,5,8), //quinta-feira Corpus Christi
+new Date(2023,8,7), //quinta-feira Independência do Brasil
+new Date(2023,9,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2023,10,2), //quinta-feira Finados
+new Date(2023,10,15), //quarta-feira Proclamação da República
+new Date(2023,11,25), //segunda-feira Natal
+new Date(2024,0,1), //segunda-feira Confraternização Universal
+new Date(2024,1,12), //segunda-feira Carnaval
+new Date(2024,1,13), //terça-feira Carnaval
+new Date(2024,2,29), //sexta-feira Paixão de Cristo
+new Date(2024,3,21), //domingo Tiradentes
+new Date(2024,4,1), //quarta-feira Dia do Trabalho
+new Date(2024,4,30), //quinta-feira Corpus Christi
+new Date(2024,8,7), //sábado Independência do Brasil
+new Date(2024,9,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2024,10,2), //sábado Finados
+new Date(2024,10,15), //sexta-feira Proclamação da República
+new Date(2024,11,25), //quarta-feira Natal
+new Date(2025,0,1), //quarta-feira Confraternização Universal
+new Date(2025,2,3), //segunda-feira Carnaval
+new Date(2025,2,4), //terça-feira Carnaval
+new Date(2025,3,18), //sexta-feira Paixão de Cristo
+new Date(2025,3,21), //segunda-feira Tiradentes
+new Date(2025,4,1), //quinta-feira Dia do Trabalho
+new Date(2025,5,19), //quinta-feira Corpus Christi
+new Date(2025,8,7), //domingo Independência do Brasil
+new Date(2025,9,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2025,10,2), //domingo Finados
+new Date(2025,10,15), //sábado Proclamação da República
+new Date(2025,11,25), //quinta-feira Natal
+new Date(2026,0,1), //quinta-feira Confraternização Universal
+new Date(2026,1,16), //segunda-feira Carnaval
+new Date(2026,1,17), //terça-feira Carnaval
+new Date(2026,3,3), //sexta-feira Paixão de Cristo
+new Date(2026,3,21), //terça-feira Tiradentes
+new Date(2026,4,1), //sexta-feira Dia do Trabalho
+new Date(2026,5,4), //quinta-feira Corpus Christi
+new Date(2026,8,7), //segunda-feira Independência do Brasil
+new Date(2026,9,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2026,10,2), //segunda-feira Finados
+new Date(2026,10,15), //domingo Proclamação da República
+new Date(2026,11,25), //sexta-feira Natal
+new Date(2027,0,1), //sexta-feira Confraternização Universal
+new Date(2027,1,8), //segunda-feira Carnaval
+new Date(2027,1,9), //terça-feira Carnaval
+new Date(2027,2,26), //sexta-feira Paixão de Cristo
+new Date(2027,3,21), //quarta-feira Tiradentes
+new Date(2027,4,1), //sábado Dia do Trabalho
+new Date(2027,4,27), //quinta-feira Corpus Christi
+new Date(2027,8,7), //terça-feira Independência do Brasil
+new Date(2027,9,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2027,10,2), //terça-feira Finados
+new Date(2027,10,15), //segunda-feira Proclamação da República
+new Date(2027,11,25), //sábado Natal
+new Date(2028,0,1), //sábado Confraternização Universal
+new Date(2028,1,28), //segunda-feira Carnaval
+new Date(2028,1,29), //terça-feira Carnaval
+new Date(2028,3,14), //sexta-feira Paixão de Cristo
+new Date(2028,3,21), //sexta-feira Tiradentes
+new Date(2028,4,1), //segunda-feira Dia do Trabalho
+new Date(2028,5,15), //quinta-feira Corpus Christi
+new Date(2028,8,7), //quinta-feira Independência do Brasil
+new Date(2028,9,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2028,10,2), //quinta-feira Finados
+new Date(2028,10,15), //quarta-feira Proclamação da República
+new Date(2028,11,25), //segunda-feira Natal
+new Date(2029,0,1), //segunda-feira Confraternização Universal
+new Date(2029,1,12), //segunda-feira Carnaval
+new Date(2029,1,13), //terça-feira Carnaval
+new Date(2029,2,30), //sexta-feira Paixão de Cristo
+new Date(2029,3,21), //sábado Tiradentes
+new Date(2029,4,1), //terça-feira Dia do Trabalho
+new Date(2029,4,31), //quinta-feira Corpus Christi
+new Date(2029,8,7), //sexta-feira Independência do Brasil
+new Date(2029,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2029,10,2), //sexta-feira Finados
+new Date(2029,10,15), //quinta-feira Proclamação da República
+new Date(2029,11,25), //terça-feira Natal
+new Date(2030,0,1), //terça-feira Confraternização Universal
+new Date(2030,2,4), //segunda-feira Carnaval
+new Date(2030,2,5), //terça-feira Carnaval
+new Date(2030,3,19), //sexta-feira Paixão de Cristo
+new Date(2030,3,21), //domingo Tiradentes
+new Date(2030,4,1), //quarta-feira Dia do Trabalho
+new Date(2030,5,20), //quinta-feira Corpus Christi
+new Date(2030,8,7), //sábado Independência do Brasil
+new Date(2030,9,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2030,10,2), //sábado Finados
+new Date(2030,10,15), //sexta-feira Proclamação da República
+new Date(2030,11,25), //quarta-feira Natal
+new Date(2031,0,1), //quarta-feira Confraternização Universal
+new Date(2031,1,24), //segunda-feira Carnaval
+new Date(2031,1,25), //terça-feira Carnaval
+new Date(2031,3,11), //sexta-feira Paixão de Cristo
+new Date(2031,3,21), //segunda-feira Tiradentes
+new Date(2031,4,1), //quinta-feira Dia do Trabalho
+new Date(2031,5,12), //quinta-feira Corpus Christi
+new Date(2031,8,7), //domingo Independência do Brasil
+new Date(2031,9,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2031,10,2), //domingo Finados
+new Date(2031,10,15), //sábado Proclamação da República
+new Date(2031,11,25), //quinta-feira Natal
+new Date(2032,0,1), //quinta-feira Confraternização Universal
+new Date(2032,1,9), //segunda-feira Carnaval
+new Date(2032,1,10), //terça-feira Carnaval
+new Date(2032,2,26), //sexta-feira Paixão de Cristo
+new Date(2032,3,21), //quarta-feira Tiradentes
+new Date(2032,4,1), //sábado Dia do Trabalho
+new Date(2032,4,27), //quinta-feira Corpus Christi
+new Date(2032,8,7), //terça-feira Independência do Brasil
+new Date(2032,9,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2032,10,2), //terça-feira Finados
+new Date(2032,10,15), //segunda-feira Proclamação da República
+new Date(2032,11,25), //sábado Natal
+new Date(2033,0,1), //sábado Confraternização Universal
+new Date(2033,1,28), //segunda-feira Carnaval
+new Date(2033,2,1), //terça-feira Carnaval
+new Date(2033,3,15), //sexta-feira Paixão de Cristo
+new Date(2033,3,21), //quinta-feira Tiradentes
+new Date(2033,4,1), //domingo Dia do Trabalho
+new Date(2033,5,16), //quinta-feira Corpus Christi
+new Date(2033,8,7), //quarta-feira Independência do Brasil
+new Date(2033,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2033,10,2), //quarta-feira Finados
+new Date(2033,10,15), //terça-feira Proclamação da República
+new Date(2033,11,25), //domingo Natal
+new Date(2034,0,1), //domingo Confraternização Universal
+new Date(2034,1,20), //segunda-feira Carnaval
+new Date(2034,1,21), //terça-feira Carnaval
+new Date(2034,3,7), //sexta-feira Paixão de Cristo
+new Date(2034,3,21), //sexta-feira Tiradentes
+new Date(2034,4,1), //segunda-feira Dia do Trabalho
+new Date(2034,5,8), //quinta-feira Corpus Christi
+new Date(2034,8,7), //quinta-feira Independência do Brasil
+new Date(2034,9,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2034,10,2), //quinta-feira Finados
+new Date(2034,10,15), //quarta-feira Proclamação da República
+new Date(2034,11,25), //segunda-feira Natal
+new Date(2035,0,1), //segunda-feira Confraternização Universal
+new Date(2035,1,5), //segunda-feira Carnaval
+new Date(2035,1,6), //terça-feira Carnaval
+new Date(2035,2,23), //sexta-feira Paixão de Cristo
+new Date(2035,3,21), //sábado Tiradentes
+new Date(2035,4,1), //terça-feira Dia do Trabalho
+new Date(2035,4,24), //quinta-feira Corpus Christi
+new Date(2035,8,7), //sexta-feira Independência do Brasil
+new Date(2035,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2035,10,2), //sexta-feira Finados
+new Date(2035,10,15), //quinta-feira Proclamação da República
+new Date(2035,11,25), //terça-feira Natal
+new Date(2036,0,1), //terça-feira Confraternização Universal
+new Date(2036,1,25), //segunda-feira Carnaval
+new Date(2036,1,26), //terça-feira Carnaval
+new Date(2036,3,11), //sexta-feira Paixão de Cristo
+new Date(2036,3,21), //segunda-feira Tiradentes
+new Date(2036,4,1), //quinta-feira Dia do Trabalho
+new Date(2036,5,12), //quinta-feira Corpus Christi
+new Date(2036,8,7), //domingo Independência do Brasil
+new Date(2036,9,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2036,10,2), //domingo Finados
+new Date(2036,10,15), //sábado Proclamação da República
+new Date(2036,11,25), //quinta-feira Natal
+new Date(2037,0,1), //quinta-feira Confraternização Universal
+new Date(2037,1,16), //segunda-feira Carnaval
+new Date(2037,1,17), //terça-feira Carnaval
+new Date(2037,3,3), //sexta-feira Paixão de Cristo
+new Date(2037,3,21), //terça-feira Tiradentes
+new Date(2037,4,1), //sexta-feira Dia do Trabalho
+new Date(2037,5,4), //quinta-feira Corpus Christi
+new Date(2037,8,7), //segunda-feira Independência do Brasil
+new Date(2037,9,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2037,10,2), //segunda-feira Finados
+new Date(2037,10,15), //domingo Proclamação da República
+new Date(2037,11,25), //sexta-feira Natal
+new Date(2038,0,1), //sexta-feira Confraternização Universal
+new Date(2038,2,8), //segunda-feira Carnaval
+new Date(2038,2,9), //terça-feira Carnaval
+new Date(2038,3,21), //quarta-feira Tiradentes
+new Date(2038,3,23), //sexta-feira Paixão de Cristo
+new Date(2038,4,1), //sábado Dia do Trabalho
+new Date(2038,5,24), //quinta-feira Corpus Christi
+new Date(2038,8,7), //terça-feira Independência do Brasil
+new Date(2038,9,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2038,10,2), //terça-feira Finados
+new Date(2038,10,15), //segunda-feira Proclamação da República
+new Date(2038,11,25), //sábado Natal
+new Date(2039,0,1), //sábado Confraternização Universal
+new Date(2039,1,21), //segunda-feira Carnaval
+new Date(2039,1,22), //terça-feira Carnaval
+new Date(2039,3,8), //sexta-feira Paixão de Cristo
+new Date(2039,3,21), //quinta-feira Tiradentes
+new Date(2039,4,1), //domingo Dia do Trabalho
+new Date(2039,5,9), //quinta-feira Corpus Christi
+new Date(2039,8,7), //quarta-feira Independência do Brasil
+new Date(2039,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2039,10,2), //quarta-feira Finados
+new Date(2039,10,15), //terça-feira Proclamação da República
+new Date(2039,11,25), //domingo Natal
+new Date(2040,0,1), //domingo Confraternização Universal
+new Date(2040,1,13), //segunda-feira Carnaval
+new Date(2040,1,14), //terça-feira Carnaval
+new Date(2040,2,30), //sexta-feira Paixão de Cristo
+new Date(2040,3,21), //sábado Tiradentes
+new Date(2040,4,1), //terça-feira Dia do Trabalho
+new Date(2040,4,31), //quinta-feira Corpus Christi
+new Date(2040,8,7), //sexta-feira Independência do Brasil
+new Date(2040,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2040,10,2), //sexta-feira Finados
+new Date(2040,10,15), //quinta-feira Proclamação da República
+new Date(2040,11,25), //terça-feira Natal
+new Date(2041,0,1), //terça-feira Confraternização Universal
+new Date(2041,2,4), //segunda-feira Carnaval
+new Date(2041,2,5), //terça-feira Carnaval
+new Date(2041,3,19), //sexta-feira Paixão de Cristo
+new Date(2041,3,21), //domingo Tiradentes
+new Date(2041,4,1), //quarta-feira Dia do Trabalho
+new Date(2041,5,20), //quinta-feira Corpus Christi
+new Date(2041,8,7), //sábado Independência do Brasil
+new Date(2041,9,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2041,10,2), //sábado Finados
+new Date(2041,10,15), //sexta-feira Proclamação da República
+new Date(2041,11,25), //quarta-feira Natal
+new Date(2042,0,1), //quarta-feira Confraternização Universal
+new Date(2042,1,17), //segunda-feira Carnaval
+new Date(2042,1,18), //terça-feira Carnaval
+new Date(2042,3,4), //sexta-feira Paixão de Cristo
+new Date(2042,3,21), //segunda-feira Tiradentes
+new Date(2042,4,1), //quinta-feira Dia do Trabalho
+new Date(2042,5,5), //quinta-feira Corpus Christi
+new Date(2042,8,7), //domingo Independência do Brasil
+new Date(2042,9,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2042,10,2), //domingo Finados
+new Date(2042,10,15), //sábado Proclamação da República
+new Date(2042,11,25), //quinta-feira Natal
+new Date(2043,0,1), //quinta-feira Confraternização Universal
+new Date(2043,1,9), //segunda-feira Carnaval
+new Date(2043,1,10), //terça-feira Carnaval
+new Date(2043,2,27), //sexta-feira Paixão de Cristo
+new Date(2043,3,21), //terça-feira Tiradentes
+new Date(2043,4,1), //sexta-feira Dia do Trabalho
+new Date(2043,4,28), //quinta-feira Corpus Christi
+new Date(2043,8,7), //segunda-feira Independência do Brasil
+new Date(2043,9,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2043,10,2), //segunda-feira Finados
+new Date(2043,10,15), //domingo Proclamação da República
+new Date(2043,11,25), //sexta-feira Natal
+new Date(2044,0,1), //sexta-feira Confraternização Universal
+new Date(2044,1,29), //segunda-feira Carnaval
+new Date(2044,2,1), //terça-feira Carnaval
+new Date(2044,3,15), //sexta-feira Paixão de Cristo
+new Date(2044,3,21), //quinta-feira Tiradentes
+new Date(2044,4,1), //domingo Dia do Trabalho
+new Date(2044,5,16), //quinta-feira Corpus Christi
+new Date(2044,8,7), //quarta-feira Independência do Brasil
+new Date(2044,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2044,10,2), //quarta-feira Finados
+new Date(2044,10,15), //terça-feira Proclamação da República
+new Date(2044,11,25), //domingo Natal
+new Date(2045,0,1), //domingo Confraternização Universal
+new Date(2045,1,20), //segunda-feira Carnaval
+new Date(2045,1,21), //terça-feira Carnaval
+new Date(2045,3,7), //sexta-feira Paixão de Cristo
+new Date(2045,3,21), //sexta-feira Tiradentes
+new Date(2045,4,1), //segunda-feira Dia do Trabalho
+new Date(2045,5,8), //quinta-feira Corpus Christi
+new Date(2045,8,7), //quinta-feira Independência do Brasil
+new Date(2045,9,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2045,10,2), //quinta-feira Finados
+new Date(2045,10,15), //quarta-feira Proclamação da República
+new Date(2045,11,25), //segunda-feira Natal
+new Date(2046,0,1), //segunda-feira Confraternização Universal
+new Date(2046,1,5), //segunda-feira Carnaval
+new Date(2046,1,6), //terça-feira Carnaval
+new Date(2046,2,23), //sexta-feira Paixão de Cristo
+new Date(2046,3,21), //sábado Tiradentes
+new Date(2046,4,1), //terça-feira Dia do Trabalho
+new Date(2046,4,24), //quinta-feira Corpus Christi
+new Date(2046,8,7), //sexta-feira Independência do Brasil
+new Date(2046,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2046,10,2), //sexta-feira Finados
+new Date(2046,10,15), //quinta-feira Proclamação da República
+new Date(2046,11,25), //terça-feira Natal
+new Date(2047,0,1), //terça-feira Confraternização Universal
+new Date(2047,1,25), //segunda-feira Carnaval
+new Date(2047,1,26), //terça-feira Carnaval
+new Date(2047,3,12), //sexta-feira Paixão de Cristo
+new Date(2047,3,21), //terça-feira Tiradentes
+new Date(2047,4,1), //quarta-feira Dia do Trabalho
+new Date(2047,5,13), //quinta-feira Corpus Christi
+new Date(2047,8,7), //sábado Independência do Brasil
+new Date(2047,9,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2047,10,2), //sábado Finados
+new Date(2047,10,15), //sexta-feira Proclamação da República
+new Date(2047,11,25), //quarta-feira Natal
+new Date(2048,0,1), //quarta-feira Confraternização Universal
+new Date(2048,1,17), //segunda-feira Carnaval
+new Date(2048,1,18), //terça-feira Carnaval
+new Date(2048,3,3), //sexta-feira Paixão de Cristo
+new Date(2048,3,21), //terça-feira Tiradentes
+new Date(2048,4,1), //sexta-feira Dia do Trabalho
+new Date(2048,5,4), //quinta-feira Corpus Christi
+new Date(2048,8,7), //segunda-feira Independência do Brasil
+new Date(2048,9,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2048,10,2), //segunda-feira Finados
+new Date(2048,10,15), //domingo Proclamação da República
+new Date(2048,11,25), //sexta-feira Natal
+new Date(2049,0,1), //sexta-feira Confraternização Universal
+new Date(2049,2,1), //segunda-feira Carnaval
+new Date(2049,2,2), //terça-feira Carnaval
+new Date(2049,3,16), //sexta-feira Paixão de Cristo
+new Date(2049,3,21), //quarta-feira Tiradentes
+new Date(2049,4,1), //sábado Dia do Trabalho
+new Date(2049,5,17), //quinta-feira Corpus Christi
+new Date(2049,8,7), //terça-feira Independência do Brasil
+new Date(2049,9,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2049,10,2), //terça-feira Finados
+new Date(2049,10,15), //segunda-feira Proclamação da República
+new Date(2049,11,25), //sábado Natal
+new Date(2050,0,1), //sábado Confraternização Universal
+new Date(2050,1,21), //segunda-feira Carnaval
+new Date(2050,1,22), //terça-feira Carnaval
+new Date(2050,3,8), //sexta-feira Paixão de Cristo
+new Date(2050,3,21), //quinta-feira Tiradentes
+new Date(2050,4,1), //domingo Dia do Trabalho
+new Date(2050,5,9), //quinta-feira Corpus Christi
+new Date(2050,8,7), //quarta-feira Independência do Brasil
+new Date(2050,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2050,10,2), //quarta-feira Finados
+new Date(2050,10,15), //terça-feira Proclamação da República
+new Date(2050,11,25), //domingo Natal
+new Date(2051,0,1), //domingo Confraternização Universal
+new Date(2051,1,13), //segunda-feira Carnaval
+new Date(2051,1,14), //terça-feira Carnaval
+new Date(2051,2,31), //sexta-feira Paixão de Cristo
+new Date(2051,3,21), //sexta-feira Tiradentes
+new Date(2051,4,1), //segunda-feira Dia do Trabalho
+new Date(2051,5,1), //quinta-feira Corpus Christi
+new Date(2051,8,7), //quinta-feira Independência do Brasil
+new Date(2051,9,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2051,10,2), //quinta-feira Finados
+new Date(2051,10,15), //quarta-feira Proclamação da República
+new Date(2051,11,25), //segunda-feira Natal
+new Date(2052,0,1), //segunda-feira Confraternização Universal
+new Date(2052,2,4), //segunda-feira Carnaval
+new Date(2052,2,5), //terça-feira Carnaval
+new Date(2052,3,19), //sexta-feira Paixão de Cristo
+new Date(2052,3,21), //domingo Tiradentes
+new Date(2052,4,1), //quarta-feira Dia do Trabalho
+new Date(2052,5,20), //quinta-feira Corpus Christi
+new Date(2052,8,7), //sábado Independência do Brasil
+new Date(2052,9,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2052,10,2), //sábado Finados
+new Date(2052,10,15), //sexta-feira Proclamação da República
+new Date(2052,11,25), //quarta-feira Natal
+new Date(2053,0,1), //quarta-feira Confraternização Universal
+new Date(2053,1,17), //segunda-feira Carnaval
+new Date(2053,1,18), //terça-feira Carnaval
+new Date(2053,3,4), //sexta-feira Paixão de Cristo
+new Date(2053,3,21), //segunda-feira Tiradentes
+new Date(2053,4,1), //quinta-feira Dia do Trabalho
+new Date(2053,5,5), //quinta-feira Corpus Christi
+new Date(2053,8,7), //domingo Independência do Brasil
+new Date(2053,9,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2053,10,2), //domingo Finados
+new Date(2053,10,15), //sábado Proclamação da República
+new Date(2053,11,25), //quinta-feira Natal
+new Date(2054,0,1), //quinta-feira Confraternização Universal
+new Date(2054,1,9), //segunda-feira Carnaval
+new Date(2054,1,10), //terça-feira Carnaval
+new Date(2054,2,27), //sexta-feira Paixão de Cristo
+new Date(2054,3,21), //terça-feira Tiradentes
+new Date(2054,4,1), //sexta-feira Dia do Trabalho
+new Date(2054,4,28), //quinta-feira Corpus Christi
+new Date(2054,8,7), //segunda-feira Independência do Brasil
+new Date(2054,9,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2054,10,2), //segunda-feira Finados
+new Date(2054,10,15), //domingo Proclamação da República
+new Date(2054,11,25), //sexta-feira Natal
+new Date(2055,0,1), //sexta-feira Confraternização Universal
+new Date(2055,2,1), //segunda-feira Carnaval
+new Date(2055,2,2), //terça-feira Carnaval
+new Date(2055,3,16), //sexta-feira Paixão de Cristo
+new Date(2055,3,21), //quarta-feira Tiradentes
+new Date(2055,4,1), //sábado Dia do Trabalho
+new Date(2055,5,17), //quinta-feira Corpus Christi
+new Date(2055,8,7), //terça-feira Independência do Brasil
+new Date(2055,9,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2055,10,2), //terça-feira Finados
+new Date(2055,10,15), //segunda-feira Proclamação da República
+new Date(2055,11,25), //sábado Natal
+new Date(2056,0,1), //sábado Confraternização Universal
+new Date(2056,1,14), //segunda-feira Carnaval
+new Date(2056,1,15), //terça-feira Carnaval
+new Date(2056,2,31), //sexta-feira Paixão de Cristo
+new Date(2056,3,21), //sexta-feira Tiradentes
+new Date(2056,4,1), //segunda-feira Dia do Trabalho
+new Date(2056,5,1), //quinta-feira Corpus Christi
+new Date(2056,8,7), //quinta-feira Independência do Brasil
+new Date(2056,9,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2056,10,2), //quinta-feira Finados
+new Date(2056,10,15), //quarta-feira Proclamação da República
+new Date(2056,11,25), //segunda-feira Natal
+new Date(2057,0,1), //segunda-feira Confraternização Universal
+new Date(2057,2,5), //segunda-feira Carnaval
+new Date(2057,2,6), //terça-feira Carnaval
+new Date(2057,3,20), //sexta-feira Paixão de Cristo
+new Date(2057,3,21), //sábado Tiradentes
+new Date(2057,4,1), //terça-feira Dia do Trabalho
+new Date(2057,5,21), //quinta-feira Corpus Christi
+new Date(2057,8,7), //sexta-feira Independência do Brasil
+new Date(2057,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2057,10,2), //sexta-feira Finados
+new Date(2057,10,15), //quinta-feira Proclamação da República
+new Date(2057,11,25), //terça-feira Natal
+new Date(2058,0,1), //terça-feira Confraternização Universal
+new Date(2058,1,25), //segunda-feira Carnaval
+new Date(2058,1,26), //terça-feira Carnaval
+new Date(2058,3,12), //sexta-feira Paixão de Cristo
+new Date(2058,3,21), //domingo Tiradentes
+new Date(2058,4,1), //quarta-feira Dia do Trabalho
+new Date(2058,5,13), //quinta-feira Corpus Christi
+new Date(2058,8,7), //sábado Independência do Brasil
+new Date(2058,9,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2058,10,2), //sábado Finados
+new Date(2058,10,15), //sexta-feira Proclamação da República
+new Date(2058,11,25), //quarta-feira Natal
+new Date(2059,0,1), //quarta-feira Confraternização Universal
+new Date(2059,1,10), //segunda-feira Carnaval
+new Date(2059,1,11), //terça-feira Carnaval
+new Date(2059,2,28), //sexta-feira Paixão de Cristo
+new Date(2059,3,21), //segunda-feira Tiradentes
+new Date(2059,4,1), //quinta-feira Dia do Trabalho
+new Date(2059,4,29), //quinta-feira Corpus Christi
+new Date(2059,8,7), //domingo Independência do Brasil
+new Date(2059,9,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2059,10,2), //domingo Finados
+new Date(2059,10,15), //sábado Proclamação da República
+new Date(2059,11,25), //quinta-feira Natal
+new Date(2060,0,1), //quinta-feira Confraternização Universal
+new Date(2060,2,1), //segunda-feira Carnaval
+new Date(2060,2,2), //terça-feira Carnaval
+new Date(2060,3,16), //sexta-feira Paixão de Cristo
+new Date(2060,3,21), //quarta-feira Tiradentes
+new Date(2060,4,1), //sábado Dia do Trabalho
+new Date(2060,5,17), //quinta-feira Corpus Christi
+new Date(2060,8,7), //terça-feira Independência do Brasil
+new Date(2060,9,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2060,10,2), //terça-feira Finados
+new Date(2060,10,15), //segunda-feira Proclamação da República
+new Date(2060,11,25), //sábado Natal
+new Date(2061,0,1), //sábado Confraternização Universal
+new Date(2061,1,21), //segunda-feira Carnaval
+new Date(2061,1,22), //terça-feira Carnaval
+new Date(2061,3,8), //sexta-feira Paixão de Cristo
+new Date(2061,3,21), //quinta-feira Tiradentes
+new Date(2061,4,1), //domingo Dia do Trabalho
+new Date(2061,5,9), //quinta-feira Corpus Christi
+new Date(2061,8,7), //quarta-feira Independência do Brasil
+new Date(2061,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2061,10,2), //quarta-feira Finados
+new Date(2061,10,15), //terça-feira Proclamação da República
+new Date(2061,11,25), //domingo Natal
+new Date(2062,0,1), //domingo Confraternização Universal
+new Date(2062,1,6), //segunda-feira Carnaval
+new Date(2062,1,7), //terça-feira Carnaval
+new Date(2062,2,24), //sexta-feira Paixão de Cristo
+new Date(2062,3,21), //sexta-feira Tiradentes
+new Date(2062,4,1), //segunda-feira Dia do Trabalho
+new Date(2062,4,25), //quinta-feira Corpus Christi
+new Date(2062,8,7), //quinta-feira Independência do Brasil
+new Date(2062,9,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2062,10,2), //quinta-feira Finados
+new Date(2062,10,15), //quarta-feira Proclamação da República
+new Date(2062,11,25), //segunda-feira Natal
+new Date(2063,0,1), //segunda-feira Confraternização Universal
+new Date(2063,1,26), //segunda-feira Carnaval
+new Date(2063,1,27), //terça-feira Carnaval
+new Date(2063,3,13), //sexta-feira Paixão de Cristo
+new Date(2063,3,21), //sábado Tiradentes
+new Date(2063,4,1), //terça-feira Dia do Trabalho
+new Date(2063,5,14), //quinta-feira Corpus Christi
+new Date(2063,8,7), //sexta-feira Independência do Brasil
+new Date(2063,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2063,10,2), //sexta-feira Finados
+new Date(2063,10,15), //quinta-feira Proclamação da República
+new Date(2063,11,25), //terça-feira Natal
+new Date(2064,0,1), //terça-feira Confraternização Universal
+new Date(2064,1,18), //segunda-feira Carnaval
+new Date(2064,1,19), //terça-feira Carnaval
+new Date(2064,3,4), //sexta-feira Paixão de Cristo
+new Date(2064,3,21), //segunda-feira Tiradentes
+new Date(2064,4,1), //quinta-feira Dia do Trabalho
+new Date(2064,5,5), //quinta-feira Corpus Christi
+new Date(2064,8,7), //domingo Independência do Brasil
+new Date(2064,9,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2064,10,2), //domingo Finados
+new Date(2064,10,15), //sábado Proclamação da República
+new Date(2064,11,25), //quinta-feira Natal
+new Date(2065,0,1), //quinta-feira Confraternização Universal
+new Date(2065,1,9), //segunda-feira Carnaval
+new Date(2065,1,10), //terça-feira Carnaval
+new Date(2065,2,27), //sexta-feira Paixão de Cristo
+new Date(2065,3,21), //terça-feira Tiradentes
+new Date(2065,4,1), //sexta-feira Dia do Trabalho
+new Date(2065,4,28), //quinta-feira Corpus Christi
+new Date(2065,8,7), //segunda-feira Independência do Brasil
+new Date(2065,9,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2065,10,2), //segunda-feira Finados
+new Date(2065,10,15), //domingo Proclamação da República
+new Date(2065,11,25), //sexta-feira Natal
+new Date(2066,0,1), //sexta-feira Confraternização Universal
+new Date(2066,1,22), //segunda-feira Carnaval
+new Date(2066,1,23), //terça-feira Carnaval
+new Date(2066,3,9), //sexta-feira Paixão de Cristo
+new Date(2066,3,21), //quarta-feira Tiradentes
+new Date(2066,4,1), //sábado Dia do Trabalho
+new Date(2066,5,10), //quinta-feira Corpus Christi
+new Date(2066,8,7), //terça-feira Independência do Brasil
+new Date(2066,9,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2066,10,2), //terça-feira Finados
+new Date(2066,10,15), //segunda-feira Proclamação da República
+new Date(2066,11,25), //sábado Natal
+new Date(2067,0,1), //sábado Confraternização Universal
+new Date(2067,1,14), //segunda-feira Carnaval
+new Date(2067,1,15), //terça-feira Carnaval
+new Date(2067,3,1), //sexta-feira Paixão de Cristo
+new Date(2067,3,21), //quinta-feira Tiradentes
+new Date(2067,4,1), //domingo Dia do Trabalho
+new Date(2067,5,2), //quinta-feira Corpus Christi
+new Date(2067,8,7), //quarta-feira Independência do Brasil
+new Date(2067,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2067,10,2), //quarta-feira Finados
+new Date(2067,10,15), //terça-feira Proclamação da República
+new Date(2067,11,25), //domingo Natal
+new Date(2068,0,1), //domingo Confraternização Universal
+new Date(2068,2,5), //segunda-feira Carnaval
+new Date(2068,2,6), //terça-feira Carnaval
+new Date(2068,3,20), //sexta-feira Paixão de Cristo
+new Date(2068,3,21), //sábado Tiradentes
+new Date(2068,4,1), //terça-feira Dia do Trabalho
+new Date(2068,5,21), //quinta-feira Corpus Christi
+new Date(2068,8,7), //sexta-feira Independência do Brasil
+new Date(2068,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2068,10,2), //sexta-feira Finados
+new Date(2068,10,15), //quinta-feira Proclamação da República
+new Date(2068,11,25), //terça-feira Natal
+new Date(2069,0,1), //terça-feira Confraternização Universal
+new Date(2069,1,25), //segunda-feira Carnaval
+new Date(2069,1,26), //terça-feira Carnaval
+new Date(2069,3,12), //sexta-feira Paixão de Cristo
+new Date(2069,3,21), //domingo Tiradentes
+new Date(2069,4,1), //quarta-feira Dia do Trabalho
+new Date(2069,5,13), //quinta-feira Corpus Christi
+new Date(2069,8,7), //sábado Independência do Brasil
+new Date(2069,9,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2069,10,2), //sábado Finados
+new Date(2069,10,15), //sexta-feira Proclamação da República
+new Date(2069,11,25), //quarta-feira Natal
+new Date(2070,0,1), //quarta-feira Confraternização Universal
+new Date(2070,1,10), //segunda-feira Carnaval
+new Date(2070,1,11), //terça-feira Carnaval
+new Date(2070,2,28), //sexta-feira Paixão de Cristo
+new Date(2070,3,21), //segunda-feira Tiradentes
+new Date(2070,4,1), //quinta-feira Dia do Trabalho
+new Date(2070,4,29), //quinta-feira Corpus Christi
+new Date(2070,8,7), //domingo Independência do Brasil
+new Date(2070,9,12), //domingo Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2070,10,2), //domingo Finados
+new Date(2070,10,15), //sábado Proclamação da República
+new Date(2070,11,25), //quinta-feira Natal
+new Date(2071,0,1), //quinta-feira Confraternização Universal
+new Date(2071,2,2), //segunda-feira Carnaval
+new Date(2071,2,3), //terça-feira Carnaval
+new Date(2071,3,17), //sexta-feira Paixão de Cristo
+new Date(2071,3,21), //terça-feira Tiradentes
+new Date(2071,4,1), //sexta-feira Dia do Trabalho
+new Date(2071,5,18), //quinta-feira Corpus Christi
+new Date(2071,8,7), //segunda-feira Independência do Brasil
+new Date(2071,9,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2071,10,2), //segunda-feira Finados
+new Date(2071,10,15), //domingo Proclamação da República
+new Date(2071,11,25), //sexta-feira Natal
+new Date(2072,0,1), //sexta-feira Confraternização Universal
+new Date(2072,1,22), //segunda-feira Carnaval
+new Date(2072,1,23), //terça-feira Carnaval
+new Date(2072,3,8), //sexta-feira Paixão de Cristo
+new Date(2072,3,21), //quinta-feira Tiradentes
+new Date(2072,4,1), //domingo Dia do Trabalho
+new Date(2072,5,9), //quinta-feira Corpus Christi
+new Date(2072,8,7), //quarta-feira Independência do Brasil
+new Date(2072,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2072,10,2), //quarta-feira Finados
+new Date(2072,10,15), //terça-feira Proclamação da República
+new Date(2072,11,25), //domingo Natal
+new Date(2073,0,1), //domingo Confraternização Universal
+new Date(2073,1,6), //segunda-feira Carnaval
+new Date(2073,1,7), //terça-feira Carnaval
+new Date(2073,2,24), //sexta-feira Paixão de Cristo
+new Date(2073,3,21), //sexta-feira Tiradentes
+new Date(2073,4,1), //segunda-feira Dia do Trabalho
+new Date(2073,4,25), //quinta-feira Corpus Christi
+new Date(2073,8,7), //quinta-feira Independência do Brasil
+new Date(2073,9,12), //quinta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2073,10,2), //quinta-feira Finados
+new Date(2073,10,15), //quarta-feira Proclamação da República
+new Date(2073,11,25), //segunda-feira Natal
+new Date(2074,0,1), //segunda-feira Confraternização Universal
+new Date(2074,1,26), //segunda-feira Carnaval
+new Date(2074,1,27), //terça-feira Carnaval
+new Date(2074,3,13), //sexta-feira Paixão de Cristo
+new Date(2074,3,21), //sábado Tiradentes
+new Date(2074,4,1), //terça-feira Dia do Trabalho
+new Date(2074,5,14), //quinta-feira Corpus Christi
+new Date(2074,8,7), //sexta-feira Independência do Brasil
+new Date(2074,9,12), //sexta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2074,10,2), //sexta-feira Finados
+new Date(2074,10,15), //quinta-feira Proclamação da República
+new Date(2074,11,25), //terça-feira Natal
+new Date(2075,0,1), //terça-feira Confraternização Universal
+new Date(2075,1,18), //segunda-feira Carnaval
+new Date(2075,1,19), //terça-feira Carnaval
+new Date(2075,3,5), //sexta-feira Paixão de Cristo
+new Date(2075,3,21), //domingo Tiradentes
+new Date(2075,4,1), //quarta-feira Dia do Trabalho
+new Date(2075,5,6), //quinta-feira Corpus Christi
+new Date(2075,8,7), //sábado Independência do Brasil
+new Date(2075,9,12), //sábado Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2075,10,2), //sábado Finados
+new Date(2075,10,15), //sexta-feira Proclamação da República
+new Date(2075,11,25), //quarta-feira Natal
+new Date(2076,0,1), //quarta-feira Confraternização Universal
+new Date(2076,2,2), //segunda-feira Carnaval
+new Date(2076,2,3), //terça-feira Carnaval
+new Date(2076,3,17), //sexta-feira Paixão de Cristo
+new Date(2076,3,21), //terça-feira Tiradentes
+new Date(2076,4,1), //sexta-feira Dia do Trabalho
+new Date(2076,5,18), //quinta-feira Corpus Christi
+new Date(2076,8,7), //segunda-feira Independência do Brasil
+new Date(2076,9,12), //segunda-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2076,10,2), //segunda-feira Finados
+new Date(2076,10,15), //domingo Proclamação da República
+new Date(2076,11,25), //sexta-feira Natal
+new Date(2077,0,1), //sexta-feira Confraternização Universal
+new Date(2077,1,22), //segunda-feira Carnaval
+new Date(2077,1,23), //terça-feira Carnaval
+new Date(2077,3,9), //sexta-feira Paixão de Cristo
+new Date(2077,3,21), //quarta-feira Tiradentes
+new Date(2077,4,1), //sábado Dia do Trabalho
+new Date(2077,5,10), //quinta-feira Corpus Christi
+new Date(2077,8,7), //terça-feira Independência do Brasil
+new Date(2077,9,12), //terça-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2077,10,2), //terça-feira Finados
+new Date(2077,10,15), //segunda-feira Proclamação da República
+new Date(2077,11,25), //sábado Natal
+new Date(2078,0,1), //terça-feira Confraternização Universal
+new Date(2078,1,14), //segunda-feira Carnaval
+new Date(2078,1,15), //terça-feira Carnaval
+new Date(2078,3,1), //sexta-feira Paixão de Cristo
+new Date(2078,3,21), //quinta-feira Tiradentes
+new Date(2078,4,1), //quarta-feira Dia do Trabalho
+new Date(2078,5,2), //quinta-feira Corpus Christi
+new Date(2078,8,7), //quarta-feira Independência do Brasil
+new Date(2078,9,12), //quarta-feira Nossa Sr.a Aparecida - Padroeira do Brasil
+new Date(2078,10,2), //quarta-feira Finados
+new Date(2078,10,15), //terça-feira Proclamação da República
+new Date(2078,11,25)]; //quarta-feira Natal
+
